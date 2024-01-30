@@ -12,6 +12,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
    plugins: [
     new HtmlWebpackPlugin({
       title: 'Odin To-Do',
+      template: './src/index.html'
     }),
   ],
    output: {

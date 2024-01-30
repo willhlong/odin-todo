@@ -1,4 +1,4 @@
-function createTask(title, description, dueDate) {
+function createTask(title, description) {
    const printTitle = () => title;
    const printDescription = () => description;
    return { printTitle, printDescription };
