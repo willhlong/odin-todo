@@ -5,7 +5,11 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
    entry: {
      index: './src/index.js',
    },
-  plugins: [
+   devServer: {
+    static: './dist',
+   },
+   mode: 'development',
+   plugins: [
     new HtmlWebpackPlugin({
       title: 'Odin To-Do',
     }),
