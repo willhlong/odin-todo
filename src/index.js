@@ -1,7 +1,5 @@
-import createTask from './modules/task.js';
+import renderTask from './modules/domController.js';
+
 console.log("Hello, World!");
 
-const myTask = createTask('Complete TOP Project', 'Work on project from The Odin Project', 'none');
-console.log(myTask.printTitle());
-console.log(myTask.printDescription());
-console.log(myTask);
+renderTask();
