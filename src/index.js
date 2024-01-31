@@ -1,4 +1,4 @@
-import createTask from './task.js';
+import createTask from './modules/task.js';
 console.log("Hello, World!");
 
 const myTask = createTask('Complete TOP Project', 'Work on project from The Odin Project', 'none');

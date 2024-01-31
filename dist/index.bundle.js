@@ -16,17 +16,17 @@
   \**********************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _task_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./task.js */ \"./src/task.js\");\n\nconsole.log(\"Hello, World!\");\n\nconst myTask = (0,_task_js__WEBPACK_IMPORTED_MODULE_0__[\"default\"])('Complete TOP Project', 'Work on project from The Odin Project', 'none');\nconsole.log(myTask.printTitle());\nconsole.log(myTask.printDescription());\nconsole.log(myTask);\n\n//# sourceURL=webpack://odin-todo/./src/index.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _modules_task_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./modules/task.js */ \"./src/modules/task.js\");\n\nconsole.log(\"Hello, World!\");\n\nconst myTask = (0,_modules_task_js__WEBPACK_IMPORTED_MODULE_0__[\"default\"])('Complete TOP Project', 'Work on project from The Odin Project', 'none');\nconsole.log(myTask.printTitle());\nconsole.log(myTask.printDescription());\nconsole.log(myTask);\n\n//# sourceURL=webpack://odin-todo/./src/index.js?");
 
 /***/ }),
 
-/***/ "./src/task.js":
-/*!*********************!*\
-  !*** ./src/task.js ***!
-  \*********************/
+/***/ "./src/modules/task.js":
+/*!*****************************!*\
+  !*** ./src/modules/task.js ***!
+  \*****************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\nfunction createTask(title, description) {\n   const printTitle = () => title;\n   const printDescription = () => description;\n   return { printTitle, printDescription };\n}\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (createTask);\n\n//# sourceURL=webpack://odin-todo/./src/task.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n\nfunction createTask(title, description) {\n   const printTitle = () => title;\n   const printDescription = () => description;\n   return { printTitle, printDescription };\n}\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (createTask);\n\n//# sourceURL=webpack://odin-todo/./src/modules/task.js?");
 
 /***/ })
 
