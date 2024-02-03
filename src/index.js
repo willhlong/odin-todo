@@ -1,5 +1,5 @@
-import renderTask from './modules/domController.js';
+import addHeaderStuff from "./pages/header";
+import './styles/mystyles.css';
 
-console.log("Hello, World!");
 
-renderTask();
+addHeaderStuff();
