@@ -57,10 +57,19 @@ img {
     border: 1px solid black;
 }
 
+.content > div {
+    display: flex;
+    gap: 10px;
+}
+
+.content > div:nth-child(2) {
+    flex-grow: 2;
+}
+
 .footer {
     grid-area: footer;
     border: 1px solid black;
-}`, "",{"version":3,"sources":["webpack://./src/styles/mystyles.css"],"names":[],"mappings":"AAAA;IACI,SAAS;AACb;;AAEA;IACI,WAAW;IACX,YAAY;AAChB;;AAEA;IACI,aAAa;IACb;;;sCAGkC;AACtC;;AAEA;IACI,aAAa;IACb,mBAAmB;IACnB,SAAS;IACT,uBAAuB;IACvB,kBAAkB;IAClB,iBAAiB;AACrB;;AAEA;IACI,eAAe;IACf,uBAAuB;AAC3B;;AAEA;IACI,kBAAkB;IAClB,uBAAuB;AAC3B;;AAEA;IACI,iBAAiB;IACjB,uBAAuB;AAC3B","sourcesContent":["body {\n    margin: 0;\n}\n\nimg {\n    width: 50px;\n    height: 50px;\n}\n\n.page-container {\n    display: grid;\n    grid-template-areas:\n    'header header header header header'\n    'menu content content content content'\n    'menu footer footer footer footer';\n}\n\n.header {\n    display: flex;\n    align-items: center;\n    gap: 25px;\n    background-color: beige;\n    padding-left: 25px;\n    grid-area: header;\n}\n\n.menu {\n    grid-area: menu;\n    border: 1px solid black;\n}\n\n.content {\n    grid-area: content;\n    border: 1px solid black;\n}\n\n.footer {\n    grid-area: footer;\n    border: 1px solid black;\n}"],"sourceRoot":""}]);
+}`, "",{"version":3,"sources":["webpack://./src/styles/mystyles.css"],"names":[],"mappings":"AAAA;IACI,SAAS;AACb;;AAEA;IACI,WAAW;IACX,YAAY;AAChB;;AAEA;IACI,aAAa;IACb;;;sCAGkC;AACtC;;AAEA;IACI,aAAa;IACb,mBAAmB;IACnB,SAAS;IACT,uBAAuB;IACvB,kBAAkB;IAClB,iBAAiB;AACrB;;AAEA;IACI,eAAe;IACf,uBAAuB;AAC3B;;AAEA;IACI,kBAAkB;IAClB,uBAAuB;AAC3B;;AAEA;IACI,aAAa;IACb,SAAS;AACb;;AAEA;IACI,YAAY;AAChB;;AAEA;IACI,iBAAiB;IACjB,uBAAuB;AAC3B","sourcesContent":["body {\n    margin: 0;\n}\n\nimg {\n    width: 50px;\n    height: 50px;\n}\n\n.page-container {\n    display: grid;\n    grid-template-areas:\n    'header header header header header'\n    'menu content content content content'\n    'menu footer footer footer footer';\n}\n\n.header {\n    display: flex;\n    align-items: center;\n    gap: 25px;\n    background-color: beige;\n    padding-left: 25px;\n    grid-area: header;\n}\n\n.menu {\n    grid-area: menu;\n    border: 1px solid black;\n}\n\n.content {\n    grid-area: content;\n    border: 1px solid black;\n}\n\n.content > div {\n    display: flex;\n    gap: 10px;\n}\n\n.content > div:nth-child(2) {\n    flex-grow: 2;\n}\n\n.footer {\n    grid-area: footer;\n    border: 1px solid black;\n}"],"sourceRoot":""}]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -507,10 +516,40 @@ module.exports = styleTagTransform;
 
 /***/ }),
 
-/***/ "./src/pages/header.js":
+/***/ "./src/modules/task.js":
 /*!*****************************!*\
-  !*** ./src/pages/header.js ***!
+  !*** ./src/modules/task.js ***!
   \*****************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ createTask)
+/* harmony export */ });
+function createTask(title, description, dueDate) {
+    const el = document.createElement('div');
+    const taskTitle = document.createElement('p');
+    taskTitle.innerText = title;
+    const taskDescription = document.createElement('p');
+    taskDescription.innerText = description;
+    const taskDueDate = document.createElement('p');
+    taskDueDate.innerText = dueDate;
+
+    el.appendChild(taskTitle);
+    el.appendChild(taskDescription);
+    el.appendChild(taskDueDate);
+
+    return {
+        el
+    }
+}
+
+/***/ }),
+
+/***/ "./src/page-components/header.js":
+/*!***************************************!*\
+  !*** ./src/page-components/header.js ***!
+  \***************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 __webpack_require__.r(__webpack_exports__);
@@ -660,15 +699,26 @@ var __webpack_exports__ = {};
   !*** ./src/index.js ***!
   \**********************/
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _pages_header__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./pages/header */ "./src/pages/header.js");
-/* harmony import */ var _styles_mystyles_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./styles/mystyles.css */ "./src/styles/mystyles.css");
+/* harmony import */ var _page_components_header__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./page-components/header */ "./src/page-components/header.js");
+/* harmony import */ var _modules_task__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./modules/task */ "./src/modules/task.js");
+/* harmony import */ var _styles_mystyles_css__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./styles/mystyles.css */ "./src/styles/mystyles.css");
 
 
 
 
-(0,_pages_header__WEBPACK_IMPORTED_MODULE_0__["default"])();
+
+(0,_page_components_header__WEBPACK_IMPORTED_MODULE_0__["default"])();
+
+const task1 = (0,_modules_task__WEBPACK_IMPORTED_MODULE_1__["default"])('gym', 'go to the gym', 'tomorrow');
+const task2 = (0,_modules_task__WEBPACK_IMPORTED_MODULE_1__["default"])('school', 'go to school', 'now');
+const task3 = (0,_modules_task__WEBPACK_IMPORTED_MODULE_1__["default"])('sleep', 'go to bed', 'now');
+
+const content = document.querySelector('.content');
+content.appendChild(task1.el);
+content.appendChild(task2.el);
+content.appendChild(task3.el);
 })();
 
 /******/ })()
 ;
-//# sourceMappingURL=bundle.da80093c93b0a7c5db27.js.map
+//# sourceMappingURL=bundle.9c096dc874458cf81c64.js.map

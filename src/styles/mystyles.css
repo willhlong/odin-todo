@@ -9,10 +9,11 @@ img {
 
 .page-container {
     display: grid;
+    grid-template-columns: 1fr 4fr;
     grid-template-areas:
-    'header header header header header'
-    'menu content content content content'
-    'menu footer footer footer footer';
+    'header header'
+    'menu content'
+    'menu footer';
 }
 
 .header {
@@ -30,8 +31,11 @@ img {
 }
 
 .content {
-    grid-area: content;
-    border: 1px solid black;
+    padding: 0px 25px;
+}
+.content > div {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
 }
 
 .footer {
