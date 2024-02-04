@@ -1,7 +1,14 @@
 :root {
     --header-height: 7vh;
     --footer-height: 7vh;
-    --sidebar-menu-height: calc(100vh - var(--header-height) - var(--footer-height));
+    --header-color-light: #3f98b7;
+    --nav-color-light: #a2cfdb;
+    --footer-color-light: #3f98b7;
+    --main-color-light: #ecf6f8;
+    --header-color-dark: #A5D8FF;
+    --nav-color-dark: #266DD3;
+    --footer-color-dark: #A5D8FF;
+    --main-color-dark: #f0f7f4;
 }
 
 body {
@@ -28,24 +35,55 @@ header {
     display: flex;
     align-items: center;
     gap: 25px;
-    background-color: beige;
     padding-left: 25px;
+    background-color: var(--header-color-light);
     grid-area: header;
     height: var(--header-height);
-    border: solid 1px black;
 }
 
 nav {
     grid-area: menu;
-    border: solid 1px black;
+    background-color: var(--nav-color-light);
     width: 300px;
 }
 
+
 main {
     grid-area: content;
+    background-color: var(--main-color-light);
+}
+
+main > div > h1 {
+    margin: 0;
+}
+
+.tasks-container {
+    display: flex;
+    flex-direction: column;
+    padding-left: 25px;
+    padding-top: 25px;
+}
+
+.task-elements-container {
+    display: flex;
+    align-items: center;
+
+}
+
+.task-elements-container > div:nth-child(1) {
+    flex-basis: 2%;
+}
+
+.task-elements-container > p {
+    flex-basis: 60%;
+    margin: 0;
+}
+
+.task-elements-container > div:nth-child(3) {
+    flex-basis: 15%;
 }
 
 footer {
     grid-area: footer;
-    background-color: beige;
+    background-color: var(--footer-color-light);
 }

@@ -24,8 +24,16 @@ var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBP
 ___CSS_LOADER_EXPORT___.push([module.id, `:root {
     --header-height: 7vh;
     --footer-height: 7vh;
-    --sidebar-menu-height: calc(100vh - var(--header-height) - var(--footer-height));
+    --header-color-light: #3f98b7;
+    --nav-color-light: #a2cfdb;
+    --footer-color-light: #3f98b7;
+    --main-color-light: #ecf6f8;
+    --header-color-dark: #A5D8FF;
+    --nav-color-dark: #266DD3;
+    --footer-color-dark: #A5D8FF;
+    --main-color-dark: #f0f7f4;
 }
+
 
 body {
     margin: 0;
@@ -51,28 +59,28 @@ header {
     display: flex;
     align-items: center;
     gap: 25px;
-    background-color: beige;
     padding-left: 25px;
+    background-color: var(--header-color-light);
     grid-area: header;
     height: var(--header-height);
-    border: solid 1px black;
 }
 
 nav {
     grid-area: menu;
-    border: solid 1px black;
+    background-color: var(--nav-color-light);
     width: 300px;
 }
 
 main {
     grid-area: content;
+    background-color: var(--main-color-light);
 }
 
 footer {
     grid-area: footer;
-    background-color: beige;
+    background-color: var(--footer-color-light);
 }
-`, "",{"version":3,"sources":["webpack://./src/styles/mystyles.css"],"names":[],"mappings":"AAAA;IACI,oBAAoB;IACpB,oBAAoB;IACpB,gFAAgF;AACpF;;AAEA;IACI,SAAS;AACb;;AAEA;IACI,WAAW;IACX,YAAY;AAChB;;AAEA;IACI,aAAa;IACb,+BAA+B;IAC/B,iCAAiC;IACjC;;;mBAGe;IACf,kBAAkB;AACtB;;AAEA;IACI,aAAa;IACb,mBAAmB;IACnB,SAAS;IACT,uBAAuB;IACvB,kBAAkB;IAClB,iBAAiB;IACjB,4BAA4B;IAC5B,uBAAuB;AAC3B;;AAEA;IACI,eAAe;IACf,uBAAuB;IACvB,YAAY;AAChB;;AAEA;IACI,kBAAkB;AACtB;;AAEA;IACI,iBAAiB;IACjB,uBAAuB;AAC3B","sourcesContent":[":root {\n    --header-height: 7vh;\n    --footer-height: 7vh;\n    --sidebar-menu-height: calc(100vh - var(--header-height) - var(--footer-height));\n}\n\nbody {\n    margin: 0;\n}\n\nimg {\n    width: 50px;\n    height: 50px;\n}\n\n.page-container {\n    display: grid;\n    grid-template-columns: auto 1fr;\n    grid-template-rows: auto 1fr auto;\n    grid-template-areas:\n    'header header'\n    'menu content'\n    'footer footer';\n    min-height: 100dvh;\n}\n\nheader {\n    display: flex;\n    align-items: center;\n    gap: 25px;\n    background-color: beige;\n    padding-left: 25px;\n    grid-area: header;\n    height: var(--header-height);\n    border: solid 1px black;\n}\n\nnav {\n    grid-area: menu;\n    border: solid 1px black;\n    width: 300px;\n}\n\nmain {\n    grid-area: content;\n}\n\nfooter {\n    grid-area: footer;\n    background-color: beige;\n}\n"],"sourceRoot":""}]);
+`, "",{"version":3,"sources":["webpack://./src/styles/mystyles.css"],"names":[],"mappings":"AAAA;IACI,oBAAoB;IACpB,oBAAoB;IACpB,6BAA6B;IAC7B,0BAA0B;IAC1B,6BAA6B;IAC7B,2BAA2B;IAC3B,4BAA4B;IAC5B,yBAAyB;IACzB,4BAA4B;IAC5B,0BAA0B;AAC9B;;;AAGA;IACI,SAAS;AACb;;AAEA;IACI,WAAW;IACX,YAAY;AAChB;;AAEA;IACI,aAAa;IACb,+BAA+B;IAC/B,iCAAiC;IACjC;;;mBAGe;IACf,kBAAkB;AACtB;;AAEA;IACI,aAAa;IACb,mBAAmB;IACnB,SAAS;IACT,kBAAkB;IAClB,2CAA2C;IAC3C,iBAAiB;IACjB,4BAA4B;AAChC;;AAEA;IACI,eAAe;IACf,wCAAwC;IACxC,YAAY;AAChB;;AAEA;IACI,kBAAkB;IAClB,yCAAyC;AAC7C;;AAEA;IACI,iBAAiB;IACjB,2CAA2C;AAC/C","sourcesContent":[":root {\n    --header-height: 7vh;\n    --footer-height: 7vh;\n    --header-color-light: #3f98b7;\n    --nav-color-light: #a2cfdb;\n    --footer-color-light: #3f98b7;\n    --main-color-light: #ecf6f8;\n    --header-color-dark: #A5D8FF;\n    --nav-color-dark: #266DD3;\n    --footer-color-dark: #A5D8FF;\n    --main-color-dark: #f0f7f4;\n}\n\n\nbody {\n    margin: 0;\n}\n\nimg {\n    width: 50px;\n    height: 50px;\n}\n\n.page-container {\n    display: grid;\n    grid-template-columns: auto 1fr;\n    grid-template-rows: auto 1fr auto;\n    grid-template-areas:\n    'header header'\n    'menu content'\n    'footer footer';\n    min-height: 100dvh;\n}\n\nheader {\n    display: flex;\n    align-items: center;\n    gap: 25px;\n    padding-left: 25px;\n    background-color: var(--header-color-light);\n    grid-area: header;\n    height: var(--header-height);\n}\n\nnav {\n    grid-area: menu;\n    background-color: var(--nav-color-light);\n    width: 300px;\n}\n\nmain {\n    grid-area: content;\n    background-color: var(--main-color-light);\n}\n\nfooter {\n    grid-area: footer;\n    background-color: var(--footer-color-light);\n}\n"],"sourceRoot":""}]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -724,4 +732,4 @@ content.appendChild(task3.el);
 
 /******/ })()
 ;
-//# sourceMappingURL=bundle.6cf0f41a3fe5c35dde5c.js.map
+//# sourceMappingURL=bundle.d708b00e2276e34f798e.js.map
