@@ -13,6 +13,7 @@
 
 body {
     margin: 0;
+    font-size: 100%;
 }
 
 img {
@@ -57,30 +58,33 @@ main > div > h1 {
     margin: 0;
 }
 
+.project-title {
+    font-size: 3rem;
+    text-align: center;
+}
+
 .tasks-container {
     display: flex;
     flex-direction: column;
-    padding-left: 25px;
-    padding-top: 25px;
+    padding: 25px;
+}
+
+.tasks-container > div:nth-child(1) {
+    display: flex;
+    justify-content: center;
+    border-bottom: 2px solid var(--header-color-light);
+    font-size: 2.5rem;
+
 }
 
 .task-elements-container {
     display: flex;
     align-items: center;
-
+    gap: 0.5rem;
 }
 
-.task-elements-container > div:nth-child(1) {
-    flex-basis: 2%;
-}
-
-.task-elements-container > p {
-    flex-basis: 60%;
-    margin: 0;
-}
-
-.task-elements-container > div:nth-child(3) {
-    flex-basis: 15%;
+.task-elements-container > div:nth-child(2) {
+    flex-grow: 1;
 }
 
 footer {
