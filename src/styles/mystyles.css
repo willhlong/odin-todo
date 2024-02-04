@@ -64,12 +64,11 @@ main > div > h1 {
 }
 
 .tasks-container {
-    display: flex;
-    flex-direction: column;
+    display: grid;
     padding: 25px;
 }
 
-.tasks-container > div:nth-child(1) {
+.task-area-title {
     display: flex;
     justify-content: center;
     border-bottom: 2px solid var(--header-color-light);
@@ -83,10 +82,14 @@ main > div > h1 {
     gap: 0.5rem;
 }
 
-.task-elements-container > div:nth-child(2) {
+.description {
     flex-grow: 1;
 }
 
+.edit > svg, .remove > svg {
+    width: 25px;
+    height: 25px;
+}
 footer {
     grid-area: footer;
     background-color: var(--footer-color-light);
