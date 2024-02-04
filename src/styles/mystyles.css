@@ -48,7 +48,6 @@ nav {
     width: 300px;
 }
 
-
 main {
     grid-area: content;
     background-color: var(--main-color-light);
@@ -65,7 +64,8 @@ main > div > h1 {
 
 .tasks-container {
     display: grid;
-    padding: 25px;
+    width: 50%;
+    margin: auto;
 }
 
 .task-area-title {
@@ -79,8 +79,10 @@ main > div > h1 {
 .task-elements-container {
     display: flex;
     align-items: center;
+    margin: auto;
     gap: 0.5rem;
-    padding: 15px 25px 0;
+    width: 75%;
+    padding-top: 0.5rem;
 }
 
 .description {
