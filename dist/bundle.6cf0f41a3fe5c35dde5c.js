@@ -21,7 +21,13 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default()));
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, `body {
+___CSS_LOADER_EXPORT___.push([module.id, `:root {
+    --header-height: 7vh;
+    --footer-height: 7vh;
+    --sidebar-menu-height: calc(100vh - var(--header-height) - var(--footer-height));
+}
+
+body {
     margin: 0;
 }
 
@@ -32,44 +38,41 @@ img {
 
 .page-container {
     display: grid;
+    grid-template-columns: auto 1fr;
+    grid-template-rows: auto 1fr auto;
     grid-template-areas:
-    'header header header header header'
-    'menu content content content content'
-    'menu footer footer footer footer';
+    'header header'
+    'menu content'
+    'footer footer';
+    min-height: 100dvh;
 }
 
-.header {
+header {
     display: flex;
     align-items: center;
     gap: 25px;
     background-color: beige;
     padding-left: 25px;
     grid-area: header;
+    height: var(--header-height);
+    border: solid 1px black;
 }
 
-.menu {
+nav {
     grid-area: menu;
-    border: 1px solid black;
+    border: solid 1px black;
+    width: 300px;
 }
 
-.content {
+main {
     grid-area: content;
-    border: 1px solid black;
 }
 
-.content > div {
-    display: flex;
-    gap: 10px;
-}
-
-.content > div:nth-child(2) {
-    flex-grow: 2;
-}
-
-.footer {
+footer {
     grid-area: footer;
-    border: 1px solid black;
-}`, "",{"version":3,"sources":["webpack://./src/styles/mystyles.css"],"names":[],"mappings":"AAAA;IACI,SAAS;AACb;;AAEA;IACI,WAAW;IACX,YAAY;AAChB;;AAEA;IACI,aAAa;IACb;;;sCAGkC;AACtC;;AAEA;IACI,aAAa;IACb,mBAAmB;IACnB,SAAS;IACT,uBAAuB;IACvB,kBAAkB;IAClB,iBAAiB;AACrB;;AAEA;IACI,eAAe;IACf,uBAAuB;AAC3B;;AAEA;IACI,kBAAkB;IAClB,uBAAuB;AAC3B;;AAEA;IACI,aAAa;IACb,SAAS;AACb;;AAEA;IACI,YAAY;AAChB;;AAEA;IACI,iBAAiB;IACjB,uBAAuB;AAC3B","sourcesContent":["body {\n    margin: 0;\n}\n\nimg {\n    width: 50px;\n    height: 50px;\n}\n\n.page-container {\n    display: grid;\n    grid-template-areas:\n    'header header header header header'\n    'menu content content content content'\n    'menu footer footer footer footer';\n}\n\n.header {\n    display: flex;\n    align-items: center;\n    gap: 25px;\n    background-color: beige;\n    padding-left: 25px;\n    grid-area: header;\n}\n\n.menu {\n    grid-area: menu;\n    border: 1px solid black;\n}\n\n.content {\n    grid-area: content;\n    border: 1px solid black;\n}\n\n.content > div {\n    display: flex;\n    gap: 10px;\n}\n\n.content > div:nth-child(2) {\n    flex-grow: 2;\n}\n\n.footer {\n    grid-area: footer;\n    border: 1px solid black;\n}"],"sourceRoot":""}]);
+    background-color: beige;
+}
+`, "",{"version":3,"sources":["webpack://./src/styles/mystyles.css"],"names":[],"mappings":"AAAA;IACI,oBAAoB;IACpB,oBAAoB;IACpB,gFAAgF;AACpF;;AAEA;IACI,SAAS;AACb;;AAEA;IACI,WAAW;IACX,YAAY;AAChB;;AAEA;IACI,aAAa;IACb,+BAA+B;IAC/B,iCAAiC;IACjC;;;mBAGe;IACf,kBAAkB;AACtB;;AAEA;IACI,aAAa;IACb,mBAAmB;IACnB,SAAS;IACT,uBAAuB;IACvB,kBAAkB;IAClB,iBAAiB;IACjB,4BAA4B;IAC5B,uBAAuB;AAC3B;;AAEA;IACI,eAAe;IACf,uBAAuB;IACvB,YAAY;AAChB;;AAEA;IACI,kBAAkB;AACtB;;AAEA;IACI,iBAAiB;IACjB,uBAAuB;AAC3B","sourcesContent":[":root {\n    --header-height: 7vh;\n    --footer-height: 7vh;\n    --sidebar-menu-height: calc(100vh - var(--header-height) - var(--footer-height));\n}\n\nbody {\n    margin: 0;\n}\n\nimg {\n    width: 50px;\n    height: 50px;\n}\n\n.page-container {\n    display: grid;\n    grid-template-columns: auto 1fr;\n    grid-template-rows: auto 1fr auto;\n    grid-template-areas:\n    'header header'\n    'menu content'\n    'footer footer';\n    min-height: 100dvh;\n}\n\nheader {\n    display: flex;\n    align-items: center;\n    gap: 25px;\n    background-color: beige;\n    padding-left: 25px;\n    grid-area: header;\n    height: var(--header-height);\n    border: solid 1px black;\n}\n\nnav {\n    grid-area: menu;\n    border: solid 1px black;\n    width: 300px;\n}\n\nmain {\n    grid-area: content;\n}\n\nfooter {\n    grid-area: footer;\n    background-color: beige;\n}\n"],"sourceRoot":""}]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -562,9 +565,9 @@ __webpack_require__.r(__webpack_exports__);
 
 
 function addHeaderStuff() {
-    const el = document.querySelector(".header");
+    const el = document.getElementById('app-header');
     const title = document.createElement('h1');
-    title.innerText = 'Alpha Todo';
+    title.innerText = 'Alpha ToDo';
     const myLogo = new Image();
     myLogo.src = _assets_check_all_svg__WEBPACK_IMPORTED_MODULE_0__;
 
@@ -721,4 +724,4 @@ content.appendChild(task3.el);
 
 /******/ })()
 ;
-//# sourceMappingURL=bundle.9c096dc874458cf81c64.js.map
+//# sourceMappingURL=bundle.6cf0f41a3fe5c35dde5c.js.map
