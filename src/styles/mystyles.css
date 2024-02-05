@@ -89,7 +89,7 @@ main > div > h1 {
     flex-grow: 1;
 }
 
-.edit > svg, .remove > svg {
+.completed svg, .edit > svg, .remove > svg {
     width: 25px;
     height: 25px;
 }
