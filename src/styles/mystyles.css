@@ -90,8 +90,14 @@ main > div > h1 {
 }
 
 .completed svg, .edit > svg, .remove > svg {
+    display: flex;
+    align-items: center;
     width: 25px;
     height: 25px;
+}
+
+.strikethrough {
+    text-decoration: line-through;
 }
 footer {
     grid-area: footer;
