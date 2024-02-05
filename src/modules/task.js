@@ -1,7 +1,7 @@
-import editIcon from '../assets/pencil.svg';
-import removeIcon from '../assets/trashcan.svg';
-import incompleteIcon from '../assets/empty-circle.svg';
-import completeIcon from '../assets/check-circle.svg';
+import editIcon from '../assets/pencil-outline.svg';
+import removeIcon from '../assets/trashcan-outline.svg';
+import incompleteIcon from '../assets/circle-outline.svg';
+import completeIcon from '../assets/check-circle-outline.svg';
 
 export default function createTask(completed, description, dueDate) {
 

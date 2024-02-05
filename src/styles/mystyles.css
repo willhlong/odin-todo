@@ -98,6 +98,7 @@ main > div > h1 {
 
 .strikethrough {
     text-decoration: line-through;
+    opacity: 50%;
 }
 footer {
     grid-area: footer;
