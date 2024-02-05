@@ -112,15 +112,21 @@ main > div > h1 {
     flex-grow: 1;
 }
 
-.edit > svg, .remove > svg {
+.completed svg, .edit > svg, .remove > svg {
+    display: flex;
+    align-items: center;
     width: 25px;
     height: 25px;
+}
+
+.strikethrough {
+    text-decoration: line-through;
 }
 footer {
     grid-area: footer;
     background-color: var(--footer-color-light);
 }
-`, "",{"version":3,"sources":["webpack://./src/styles/mystyles.css"],"names":[],"mappings":"AAAA;IACI,oBAAoB;IACpB,oBAAoB;IACpB,6BAA6B;IAC7B,0BAA0B;IAC1B,6BAA6B;IAC7B,2BAA2B;IAC3B,4BAA4B;IAC5B,yBAAyB;IACzB,4BAA4B;IAC5B,0BAA0B;AAC9B;;AAEA;IACI,SAAS;IACT,eAAe;AACnB;;AAEA;IACI,WAAW;IACX,YAAY;AAChB;;AAEA;IACI,aAAa;IACb,+BAA+B;IAC/B,iCAAiC;IACjC;;;mBAGe;IACf,kBAAkB;AACtB;;AAEA;IACI,aAAa;IACb,mBAAmB;IACnB,SAAS;IACT,kBAAkB;IAClB,2CAA2C;IAC3C,iBAAiB;IACjB,4BAA4B;AAChC;;AAEA;IACI,eAAe;IACf,wCAAwC;IACxC,YAAY;AAChB;;AAEA;IACI,kBAAkB;IAClB,yCAAyC;AAC7C;;AAEA;IACI,SAAS;AACb;;AAEA;IACI,eAAe;IACf,kBAAkB;AACtB;;AAEA;IACI,aAAa;IACb,UAAU;IACV,YAAY;AAChB;;AAEA;IACI,aAAa;IACb,uBAAuB;IACvB,kDAAkD;IAClD,iBAAiB;;AAErB;;AAEA;IACI,aAAa;IACb,mBAAmB;IACnB,YAAY;IACZ,WAAW;IACX,UAAU;IACV,mBAAmB;AACvB;;AAEA;IACI,YAAY;AAChB;;AAEA;IACI,WAAW;IACX,YAAY;AAChB;AACA;IACI,iBAAiB;IACjB,2CAA2C;AAC/C","sourcesContent":[":root {\n    --header-height: 7vh;\n    --footer-height: 7vh;\n    --header-color-light: #3f98b7;\n    --nav-color-light: #a2cfdb;\n    --footer-color-light: #3f98b7;\n    --main-color-light: #ecf6f8;\n    --header-color-dark: #A5D8FF;\n    --nav-color-dark: #266DD3;\n    --footer-color-dark: #A5D8FF;\n    --main-color-dark: #f0f7f4;\n}\n\nbody {\n    margin: 0;\n    font-size: 100%;\n}\n\nimg {\n    width: 50px;\n    height: 50px;\n}\n\n.page-container {\n    display: grid;\n    grid-template-columns: auto 1fr;\n    grid-template-rows: auto 1fr auto;\n    grid-template-areas:\n    'header header'\n    'menu content'\n    'footer footer';\n    min-height: 100dvh;\n}\n\nheader {\n    display: flex;\n    align-items: center;\n    gap: 25px;\n    padding-left: 25px;\n    background-color: var(--header-color-light);\n    grid-area: header;\n    height: var(--header-height);\n}\n\nnav {\n    grid-area: menu;\n    background-color: var(--nav-color-light);\n    width: 300px;\n}\n\nmain {\n    grid-area: content;\n    background-color: var(--main-color-light);\n}\n\nmain > div > h1 {\n    margin: 0;\n}\n\n.project-title {\n    font-size: 3rem;\n    text-align: center;\n}\n\n.tasks-container {\n    display: grid;\n    width: 50%;\n    margin: auto;\n}\n\n.task-area-title {\n    display: flex;\n    justify-content: center;\n    border-bottom: 2px solid var(--header-color-light);\n    font-size: 2.5rem;\n\n}\n\n.task-elements-container {\n    display: flex;\n    align-items: center;\n    margin: auto;\n    gap: 0.5rem;\n    width: 75%;\n    padding-top: 0.5rem;\n}\n\n.description {\n    flex-grow: 1;\n}\n\n.edit > svg, .remove > svg {\n    width: 25px;\n    height: 25px;\n}\nfooter {\n    grid-area: footer;\n    background-color: var(--footer-color-light);\n}\n"],"sourceRoot":""}]);
+`, "",{"version":3,"sources":["webpack://./src/styles/mystyles.css"],"names":[],"mappings":"AAAA;IACI,oBAAoB;IACpB,oBAAoB;IACpB,6BAA6B;IAC7B,0BAA0B;IAC1B,6BAA6B;IAC7B,2BAA2B;IAC3B,4BAA4B;IAC5B,yBAAyB;IACzB,4BAA4B;IAC5B,0BAA0B;AAC9B;;AAEA;IACI,SAAS;IACT,eAAe;AACnB;;AAEA;IACI,WAAW;IACX,YAAY;AAChB;;AAEA;IACI,aAAa;IACb,+BAA+B;IAC/B,iCAAiC;IACjC;;;mBAGe;IACf,kBAAkB;AACtB;;AAEA;IACI,aAAa;IACb,mBAAmB;IACnB,SAAS;IACT,kBAAkB;IAClB,2CAA2C;IAC3C,iBAAiB;IACjB,4BAA4B;AAChC;;AAEA;IACI,eAAe;IACf,wCAAwC;IACxC,YAAY;AAChB;;AAEA;IACI,kBAAkB;IAClB,yCAAyC;AAC7C;;AAEA;IACI,SAAS;AACb;;AAEA;IACI,eAAe;IACf,kBAAkB;AACtB;;AAEA;IACI,aAAa;IACb,UAAU;IACV,YAAY;AAChB;;AAEA;IACI,aAAa;IACb,uBAAuB;IACvB,kDAAkD;IAClD,iBAAiB;;AAErB;;AAEA;IACI,aAAa;IACb,mBAAmB;IACnB,YAAY;IACZ,WAAW;IACX,UAAU;IACV,mBAAmB;AACvB;;AAEA;IACI,YAAY;AAChB;;AAEA;IACI,aAAa;IACb,mBAAmB;IACnB,WAAW;IACX,YAAY;AAChB;;AAEA;IACI,6BAA6B;AACjC;AACA;IACI,iBAAiB;IACjB,2CAA2C;AAC/C","sourcesContent":[":root {\n    --header-height: 7vh;\n    --footer-height: 7vh;\n    --header-color-light: #3f98b7;\n    --nav-color-light: #a2cfdb;\n    --footer-color-light: #3f98b7;\n    --main-color-light: #ecf6f8;\n    --header-color-dark: #A5D8FF;\n    --nav-color-dark: #266DD3;\n    --footer-color-dark: #A5D8FF;\n    --main-color-dark: #f0f7f4;\n}\n\nbody {\n    margin: 0;\n    font-size: 100%;\n}\n\nimg {\n    width: 50px;\n    height: 50px;\n}\n\n.page-container {\n    display: grid;\n    grid-template-columns: auto 1fr;\n    grid-template-rows: auto 1fr auto;\n    grid-template-areas:\n    'header header'\n    'menu content'\n    'footer footer';\n    min-height: 100dvh;\n}\n\nheader {\n    display: flex;\n    align-items: center;\n    gap: 25px;\n    padding-left: 25px;\n    background-color: var(--header-color-light);\n    grid-area: header;\n    height: var(--header-height);\n}\n\nnav {\n    grid-area: menu;\n    background-color: var(--nav-color-light);\n    width: 300px;\n}\n\nmain {\n    grid-area: content;\n    background-color: var(--main-color-light);\n}\n\nmain > div > h1 {\n    margin: 0;\n}\n\n.project-title {\n    font-size: 3rem;\n    text-align: center;\n}\n\n.tasks-container {\n    display: grid;\n    width: 50%;\n    margin: auto;\n}\n\n.task-area-title {\n    display: flex;\n    justify-content: center;\n    border-bottom: 2px solid var(--header-color-light);\n    font-size: 2.5rem;\n\n}\n\n.task-elements-container {\n    display: flex;\n    align-items: center;\n    margin: auto;\n    gap: 0.5rem;\n    width: 75%;\n    padding-top: 0.5rem;\n}\n\n.description {\n    flex-grow: 1;\n}\n\n.completed svg, .edit > svg, .remove > svg {\n    display: flex;\n    align-items: center;\n    width: 25px;\n    height: 25px;\n}\n\n.strikethrough {\n    text-decoration: line-through;\n}\nfooter {\n    grid-area: footer;\n    background-color: var(--footer-color-light);\n}\n"],"sourceRoot":""}]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -577,34 +583,67 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (/* binding */ createTask)
 /* harmony export */ });
-function createTask(description, dueDate) {
-    let completed = 'No';
+/* harmony import */ var _assets_trashcan_svg__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../assets/trashcan.svg */ "./src/assets/trashcan.svg");
+/* harmony import */ var _assets_pencil_svg__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../assets/pencil.svg */ "./src/assets/pencil.svg");
+/* harmony import */ var _assets_empty_circle_svg__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../assets/empty-circle.svg */ "./src/assets/empty-circle.svg");
+/* harmony import */ var _assets_check_circle_svg__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../assets/check-circle.svg */ "./src/assets/check-circle.svg");
+
+
+
+
+
+function createTask(completed, description, dueDate) {
 
     const el = document.createElement('div');
     el.classList.add('task-elements-container');
 
     const taskCompleted = document.createElement('div');
-    const checkBox = document.createElement('input');
-    checkBox.type = 'checkbox';
+    taskCompleted.addEventListener('click', toggleCompletion);
     taskCompleted.classList.add('completed');
-    taskCompleted.appendChild(checkBox);
+
     const taskDescription = document.createElement('div');
     taskDescription.innerText = description;
     taskDescription.classList.add('description');
+
     const taskDueDate = document.createElement('div');
     taskDueDate.innerText = dueDate;
     taskDueDate.classList.add('due-date');
+
     const editLogo = document.createElement('div');
-    editLogo.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><title>pencil-circle</title><path d="M12,2C6.47,2 2,6.47 2,12C2,17.53 6.47,22 12,22C17.53,22 22,17.53 22,12C22,6.47 17.53,2 12,2M15.1,7.07C15.24,7.07 15.38,7.12 15.5,7.23L16.77,8.5C17,8.72 17,9.07 16.77,9.28L15.77,10.28L13.72,8.23L14.72,7.23C14.82,7.12 14.96,7.07 15.1,7.07M13.13,8.81L15.19,10.87L9.13,16.93H7.07V14.87L13.13,8.81Z" /></svg>';
+    editLogo.innerHTML = _assets_pencil_svg__WEBPACK_IMPORTED_MODULE_1__;
     editLogo.classList.add('edit');
+
     const deleteLogo = document.createElement('div');
-    deleteLogo.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><title>delete-circle</title><path d="M12,2C17.53,2 22,6.47 22,12C22,17.53 17.53,22 12,22C6.47,22 2,17.53 2,12C2,6.47 6.47,2 12,2M17,7H14.5L13.5,6H10.5L9.5,7H7V9H17V7M9,18H15A1,1 0 0,0 16,17V10H8V17A1,1 0 0,0 9,18Z" /></svg>';
+    deleteLogo.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><title>delete</title><path d="M12,2C17.53,2 22,6.47 22,12C22,17.53 17.53,22 12,22C6.47,22 2,17.53 2,12C2,6.47 6.47,2 12,2M17,7H14.5L13.5,6H10.5L9.5,7H7V9H17V7M9,18H15A1,1 0 0,0 16,17V10H8V17A1,1 0 0,0 9,18Z" /></svg>';
     deleteLogo.classList.add('remove');
+
+    if (completed) {
+        taskCompleted.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><title>check-complete</title><path d="M12 2C6.5 2 2 6.5 2 12S6.5 22 12 22 22 17.5 22 12 17.5 2 12 2M10 17L5 12L6.41 10.59L10 14.17L17.59 6.58L19 8L10 17Z" /></svg>';
+        taskDescription.classList.add('strikethrough');
+    }
+    else {
+        taskCompleted.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><title>complete</title><path d="M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2Z" /></svg>';
+    }
+
     el.appendChild(taskCompleted);
     el.appendChild(taskDescription);
     el.appendChild(taskDueDate);
     el.appendChild(editLogo);
     el.appendChild(deleteLogo);
+
+    
+    function toggleCompletion() {
+        if (completed) {
+            taskCompleted.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><title>complete</title><path d="M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2Z" /></svg>';
+            completed = false;
+            taskDescription.classList.remove('strikethrough');
+        }
+        else {
+            taskCompleted.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><title>check-complete</title><path d="M12 2C6.5 2 2 6.5 2 12S6.5 22 12 22 22 17.5 22 12 17.5 2 12 2M10 17L5 12L6.41 10.59L10 14.17L17.59 6.58L19 8L10 17Z" /></svg>';
+            completed = true;
+            taskDescription.classList.add('strikethrough');
+        }
+    }
 
     return {
         el
@@ -648,6 +687,46 @@ function addHeaderStuff() {
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
 module.exports = __webpack_require__.p + "check-all.svg";
+
+/***/ }),
+
+/***/ "./src/assets/check-circle.svg":
+/*!*************************************!*\
+  !*** ./src/assets/check-circle.svg ***!
+  \*************************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+module.exports = __webpack_require__.p + "check-circle.svg";
+
+/***/ }),
+
+/***/ "./src/assets/empty-circle.svg":
+/*!*************************************!*\
+  !*** ./src/assets/empty-circle.svg ***!
+  \*************************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+module.exports = __webpack_require__.p + "empty-circle.svg";
+
+/***/ }),
+
+/***/ "./src/assets/pencil.svg":
+/*!*******************************!*\
+  !*** ./src/assets/pencil.svg ***!
+  \*******************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+module.exports = __webpack_require__.p + "pencil.svg";
+
+/***/ }),
+
+/***/ "./src/assets/trashcan.svg":
+/*!*********************************!*\
+  !*** ./src/assets/trashcan.svg ***!
+  \*********************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+module.exports = __webpack_require__.p + "trashcan.svg";
 
 /***/ })
 
@@ -776,9 +855,9 @@ __webpack_require__.r(__webpack_exports__);
 
 (0,_page_components_header__WEBPACK_IMPORTED_MODULE_0__["default"])();
 
-const task1 = (0,_modules_task__WEBPACK_IMPORTED_MODULE_1__["default"])('go to the gym', '02/05/2024');
-const task2 = (0,_modules_task__WEBPACK_IMPORTED_MODULE_1__["default"])('go to school', '03/09/2024');
-const task3 = (0,_modules_task__WEBPACK_IMPORTED_MODULE_1__["default"])('go to bed', '02/04/2024');
+const task1 = (0,_modules_task__WEBPACK_IMPORTED_MODULE_1__["default"])(true, 'go to the gym', '02/05/2024');
+const task2 = (0,_modules_task__WEBPACK_IMPORTED_MODULE_1__["default"])(false, 'go to school', '03/09/2024');
+const task3 = (0,_modules_task__WEBPACK_IMPORTED_MODULE_1__["default"])(false, 'go to bed', '02/04/2024');
 
 const content = document.querySelector('.tasks-container');
 content.appendChild(task1.el);
@@ -788,4 +867,4 @@ content.appendChild(task3.el);
 
 /******/ })()
 ;
-//# sourceMappingURL=bundle.52e937b8c028e2d61b12.js.map
+//# sourceMappingURL=bundle.8214614c9c26963aca77.js.map
