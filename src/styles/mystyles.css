@@ -85,15 +85,15 @@ main > div > h1 {
     padding-top: 0.5rem;
 }
 
-.description {
-    flex-grow: 1;
-}
-
-.completed svg, .edit > svg, .remove > svg {
+.task-elements-container img {
     display: flex;
     align-items: center;
     width: 25px;
     height: 25px;
+}
+
+.description {
+    flex-grow: 1;
 }
 
 .strikethrough {
