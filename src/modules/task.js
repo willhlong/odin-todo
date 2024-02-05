@@ -5,6 +5,7 @@ import completeIcon from '../assets/check-circle-outline.svg';
 
 export default function createTask(completed, description, dueDate) {
 
+    /* Create HTML elements needed for new task to be added to the DOM */
     const el = document.createElement('div');
     el.classList.add('task-elements-container');
 
@@ -40,6 +41,7 @@ export default function createTask(completed, description, dueDate) {
     deleteLogoElement.appendChild(myRemoveIcon);
     deleteLogoElement.classList.add('remove');
 
+    /* Load completed status and update checkmark icon in DOM */
     if (completed) {
         taskCompletedElement.appendChild(myCompleteIcon);
         taskDescriptionElement.classList.add('strikethrough');
@@ -48,13 +50,14 @@ export default function createTask(completed, description, dueDate) {
         taskCompletedElement.appendChild(myIncompleteIcon);
     }
 
+    /* Combine elements created above to create HTML to be added to DOM */
     el.appendChild(taskCompletedElement);
     el.appendChild(taskDescriptionElement);
     el.appendChild(taskDueDateElement);
     el.appendChild(editLogoElement);
     el.appendChild(deleteLogoElement);
 
-    
+    /* Toggle whether a task has been completed and update checkbox accordingly */
     function toggleCompletion() {
         if (completed) {
             taskCompletedElement.removeChild(taskCompletedElement.firstChild);
