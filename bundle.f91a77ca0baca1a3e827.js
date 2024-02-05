@@ -108,25 +108,26 @@ main > div > h1 {
     padding-top: 0.5rem;
 }
 
-.description {
-    flex-grow: 1;
-}
-
-.completed svg, .edit > svg, .remove > svg {
+.task-elements-container img {
     display: flex;
     align-items: center;
     width: 25px;
     height: 25px;
 }
 
+.description {
+    flex-grow: 1;
+}
+
 .strikethrough {
     text-decoration: line-through;
+    opacity: 50%;
 }
 footer {
     grid-area: footer;
     background-color: var(--footer-color-light);
 }
-`, "",{"version":3,"sources":["webpack://./src/styles/mystyles.css"],"names":[],"mappings":"AAAA;IACI,oBAAoB;IACpB,oBAAoB;IACpB,6BAA6B;IAC7B,0BAA0B;IAC1B,6BAA6B;IAC7B,2BAA2B;IAC3B,4BAA4B;IAC5B,yBAAyB;IACzB,4BAA4B;IAC5B,0BAA0B;AAC9B;;AAEA;IACI,SAAS;IACT,eAAe;AACnB;;AAEA;IACI,WAAW;IACX,YAAY;AAChB;;AAEA;IACI,aAAa;IACb,+BAA+B;IAC/B,iCAAiC;IACjC;;;mBAGe;IACf,kBAAkB;AACtB;;AAEA;IACI,aAAa;IACb,mBAAmB;IACnB,SAAS;IACT,kBAAkB;IAClB,2CAA2C;IAC3C,iBAAiB;IACjB,4BAA4B;AAChC;;AAEA;IACI,eAAe;IACf,wCAAwC;IACxC,YAAY;AAChB;;AAEA;IACI,kBAAkB;IAClB,yCAAyC;AAC7C;;AAEA;IACI,SAAS;AACb;;AAEA;IACI,eAAe;IACf,kBAAkB;AACtB;;AAEA;IACI,aAAa;IACb,UAAU;IACV,YAAY;AAChB;;AAEA;IACI,aAAa;IACb,uBAAuB;IACvB,kDAAkD;IAClD,iBAAiB;;AAErB;;AAEA;IACI,aAAa;IACb,mBAAmB;IACnB,YAAY;IACZ,WAAW;IACX,UAAU;IACV,mBAAmB;AACvB;;AAEA;IACI,YAAY;AAChB;;AAEA;IACI,aAAa;IACb,mBAAmB;IACnB,WAAW;IACX,YAAY;AAChB;;AAEA;IACI,6BAA6B;AACjC;AACA;IACI,iBAAiB;IACjB,2CAA2C;AAC/C","sourcesContent":[":root {\n    --header-height: 7vh;\n    --footer-height: 7vh;\n    --header-color-light: #3f98b7;\n    --nav-color-light: #a2cfdb;\n    --footer-color-light: #3f98b7;\n    --main-color-light: #ecf6f8;\n    --header-color-dark: #A5D8FF;\n    --nav-color-dark: #266DD3;\n    --footer-color-dark: #A5D8FF;\n    --main-color-dark: #f0f7f4;\n}\n\nbody {\n    margin: 0;\n    font-size: 100%;\n}\n\nimg {\n    width: 50px;\n    height: 50px;\n}\n\n.page-container {\n    display: grid;\n    grid-template-columns: auto 1fr;\n    grid-template-rows: auto 1fr auto;\n    grid-template-areas:\n    'header header'\n    'menu content'\n    'footer footer';\n    min-height: 100dvh;\n}\n\nheader {\n    display: flex;\n    align-items: center;\n    gap: 25px;\n    padding-left: 25px;\n    background-color: var(--header-color-light);\n    grid-area: header;\n    height: var(--header-height);\n}\n\nnav {\n    grid-area: menu;\n    background-color: var(--nav-color-light);\n    width: 300px;\n}\n\nmain {\n    grid-area: content;\n    background-color: var(--main-color-light);\n}\n\nmain > div > h1 {\n    margin: 0;\n}\n\n.project-title {\n    font-size: 3rem;\n    text-align: center;\n}\n\n.tasks-container {\n    display: grid;\n    width: 50%;\n    margin: auto;\n}\n\n.task-area-title {\n    display: flex;\n    justify-content: center;\n    border-bottom: 2px solid var(--header-color-light);\n    font-size: 2.5rem;\n\n}\n\n.task-elements-container {\n    display: flex;\n    align-items: center;\n    margin: auto;\n    gap: 0.5rem;\n    width: 75%;\n    padding-top: 0.5rem;\n}\n\n.description {\n    flex-grow: 1;\n}\n\n.completed svg, .edit > svg, .remove > svg {\n    display: flex;\n    align-items: center;\n    width: 25px;\n    height: 25px;\n}\n\n.strikethrough {\n    text-decoration: line-through;\n}\nfooter {\n    grid-area: footer;\n    background-color: var(--footer-color-light);\n}\n"],"sourceRoot":""}]);
+`, "",{"version":3,"sources":["webpack://./src/styles/mystyles.css"],"names":[],"mappings":"AAAA;IACI,oBAAoB;IACpB,oBAAoB;IACpB,6BAA6B;IAC7B,0BAA0B;IAC1B,6BAA6B;IAC7B,2BAA2B;IAC3B,4BAA4B;IAC5B,yBAAyB;IACzB,4BAA4B;IAC5B,0BAA0B;AAC9B;;AAEA;IACI,SAAS;IACT,eAAe;AACnB;;AAEA;IACI,WAAW;IACX,YAAY;AAChB;;AAEA;IACI,aAAa;IACb,+BAA+B;IAC/B,iCAAiC;IACjC;;;mBAGe;IACf,kBAAkB;AACtB;;AAEA;IACI,aAAa;IACb,mBAAmB;IACnB,SAAS;IACT,kBAAkB;IAClB,2CAA2C;IAC3C,iBAAiB;IACjB,4BAA4B;AAChC;;AAEA;IACI,eAAe;IACf,wCAAwC;IACxC,YAAY;AAChB;;AAEA;IACI,kBAAkB;IAClB,yCAAyC;AAC7C;;AAEA;IACI,SAAS;AACb;;AAEA;IACI,eAAe;IACf,kBAAkB;AACtB;;AAEA;IACI,aAAa;IACb,UAAU;IACV,YAAY;AAChB;;AAEA;IACI,aAAa;IACb,uBAAuB;IACvB,kDAAkD;IAClD,iBAAiB;;AAErB;;AAEA;IACI,aAAa;IACb,mBAAmB;IACnB,YAAY;IACZ,WAAW;IACX,UAAU;IACV,mBAAmB;AACvB;;AAEA;IACI,aAAa;IACb,mBAAmB;IACnB,WAAW;IACX,YAAY;AAChB;;AAEA;IACI,YAAY;AAChB;;AAEA;IACI,6BAA6B;IAC7B,YAAY;AAChB;AACA;IACI,iBAAiB;IACjB,2CAA2C;AAC/C","sourcesContent":[":root {\n    --header-height: 7vh;\n    --footer-height: 7vh;\n    --header-color-light: #3f98b7;\n    --nav-color-light: #a2cfdb;\n    --footer-color-light: #3f98b7;\n    --main-color-light: #ecf6f8;\n    --header-color-dark: #A5D8FF;\n    --nav-color-dark: #266DD3;\n    --footer-color-dark: #A5D8FF;\n    --main-color-dark: #f0f7f4;\n}\n\nbody {\n    margin: 0;\n    font-size: 100%;\n}\n\nimg {\n    width: 50px;\n    height: 50px;\n}\n\n.page-container {\n    display: grid;\n    grid-template-columns: auto 1fr;\n    grid-template-rows: auto 1fr auto;\n    grid-template-areas:\n    'header header'\n    'menu content'\n    'footer footer';\n    min-height: 100dvh;\n}\n\nheader {\n    display: flex;\n    align-items: center;\n    gap: 25px;\n    padding-left: 25px;\n    background-color: var(--header-color-light);\n    grid-area: header;\n    height: var(--header-height);\n}\n\nnav {\n    grid-area: menu;\n    background-color: var(--nav-color-light);\n    width: 300px;\n}\n\nmain {\n    grid-area: content;\n    background-color: var(--main-color-light);\n}\n\nmain > div > h1 {\n    margin: 0;\n}\n\n.project-title {\n    font-size: 3rem;\n    text-align: center;\n}\n\n.tasks-container {\n    display: grid;\n    width: 50%;\n    margin: auto;\n}\n\n.task-area-title {\n    display: flex;\n    justify-content: center;\n    border-bottom: 2px solid var(--header-color-light);\n    font-size: 2.5rem;\n\n}\n\n.task-elements-container {\n    display: flex;\n    align-items: center;\n    margin: auto;\n    gap: 0.5rem;\n    width: 75%;\n    padding-top: 0.5rem;\n}\n\n.task-elements-container img {\n    display: flex;\n    align-items: center;\n    width: 25px;\n    height: 25px;\n}\n\n.description {\n    flex-grow: 1;\n}\n\n.strikethrough {\n    text-decoration: line-through;\n    opacity: 50%;\n}\nfooter {\n    grid-area: footer;\n    background-color: var(--footer-color-light);\n}\n"],"sourceRoot":""}]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -583,10 +584,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (/* binding */ createTask)
 /* harmony export */ });
-/* harmony import */ var _assets_trashcan_svg__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../assets/trashcan.svg */ "./src/assets/trashcan.svg");
-/* harmony import */ var _assets_pencil_svg__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../assets/pencil.svg */ "./src/assets/pencil.svg");
-/* harmony import */ var _assets_empty_circle_svg__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../assets/empty-circle.svg */ "./src/assets/empty-circle.svg");
-/* harmony import */ var _assets_check_circle_svg__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../assets/check-circle.svg */ "./src/assets/check-circle.svg");
+/* harmony import */ var _assets_pencil_outline_svg__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../assets/pencil-outline.svg */ "./src/assets/pencil-outline.svg");
+/* harmony import */ var _assets_trashcan_outline_svg__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../assets/trashcan-outline.svg */ "./src/assets/trashcan-outline.svg");
+/* harmony import */ var _assets_circle_outline_svg__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../assets/circle-outline.svg */ "./src/assets/circle-outline.svg");
+/* harmony import */ var _assets_check_circle_outline_svg__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../assets/check-circle-outline.svg */ "./src/assets/check-circle-outline.svg");
 
 
 
@@ -597,51 +598,65 @@ function createTask(completed, description, dueDate) {
     const el = document.createElement('div');
     el.classList.add('task-elements-container');
 
-    const taskCompleted = document.createElement('div');
-    taskCompleted.addEventListener('click', toggleCompletion);
-    taskCompleted.classList.add('completed');
+    const myEditIcon = new Image();
+    myEditIcon.src = _assets_pencil_outline_svg__WEBPACK_IMPORTED_MODULE_0__;
 
-    const taskDescription = document.createElement('div');
-    taskDescription.innerText = description;
-    taskDescription.classList.add('description');
+    const myRemoveIcon = new Image();
+    myRemoveIcon.src = _assets_trashcan_outline_svg__WEBPACK_IMPORTED_MODULE_1__;
 
-    const taskDueDate = document.createElement('div');
-    taskDueDate.innerText = dueDate;
-    taskDueDate.classList.add('due-date');
+    const myIncompleteIcon = new Image();
+    myIncompleteIcon.src = _assets_circle_outline_svg__WEBPACK_IMPORTED_MODULE_2__;
 
-    const editLogo = document.createElement('div');
-    editLogo.innerHTML = _assets_pencil_svg__WEBPACK_IMPORTED_MODULE_1__;
-    editLogo.classList.add('edit');
+    const myCompleteIcon = new Image();
+    myCompleteIcon.src = _assets_check_circle_outline_svg__WEBPACK_IMPORTED_MODULE_3__;
 
-    const deleteLogo = document.createElement('div');
-    deleteLogo.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><title>delete</title><path d="M12,2C17.53,2 22,6.47 22,12C22,17.53 17.53,22 12,22C6.47,22 2,17.53 2,12C2,6.47 6.47,2 12,2M17,7H14.5L13.5,6H10.5L9.5,7H7V9H17V7M9,18H15A1,1 0 0,0 16,17V10H8V17A1,1 0 0,0 9,18Z" /></svg>';
-    deleteLogo.classList.add('remove');
+    const taskCompletedElement = document.createElement('div');
+    taskCompletedElement.addEventListener('click', toggleCompletion);
+    taskCompletedElement.classList.add('completed');
+
+    const taskDescriptionElement = document.createElement('div');
+    taskDescriptionElement.innerText = description;
+    taskDescriptionElement.classList.add('description');
+
+    const taskDueDateElement = document.createElement('div');
+    taskDueDateElement.innerText = dueDate;
+    taskDueDateElement.classList.add('due-date');
+
+    const editLogoElement = document.createElement('div');
+    editLogoElement.appendChild(myEditIcon);
+    editLogoElement.classList.add('edit');
+
+    const deleteLogoElement = document.createElement('div');
+    deleteLogoElement.appendChild(myRemoveIcon);
+    deleteLogoElement.classList.add('remove');
 
     if (completed) {
-        taskCompleted.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><title>check-complete</title><path d="M12 2C6.5 2 2 6.5 2 12S6.5 22 12 22 22 17.5 22 12 17.5 2 12 2M10 17L5 12L6.41 10.59L10 14.17L17.59 6.58L19 8L10 17Z" /></svg>';
-        taskDescription.classList.add('strikethrough');
+        taskCompletedElement.appendChild(myCompleteIcon);
+        taskDescriptionElement.classList.add('strikethrough');
     }
     else {
-        taskCompleted.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><title>complete</title><path d="M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2Z" /></svg>';
+        taskCompletedElement.appendChild(myIncompleteIcon);
     }
 
-    el.appendChild(taskCompleted);
-    el.appendChild(taskDescription);
-    el.appendChild(taskDueDate);
-    el.appendChild(editLogo);
-    el.appendChild(deleteLogo);
+    el.appendChild(taskCompletedElement);
+    el.appendChild(taskDescriptionElement);
+    el.appendChild(taskDueDateElement);
+    el.appendChild(editLogoElement);
+    el.appendChild(deleteLogoElement);
 
     
     function toggleCompletion() {
         if (completed) {
-            taskCompleted.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><title>complete</title><path d="M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2Z" /></svg>';
+            taskCompletedElement.removeChild(taskCompletedElement.firstChild);
+            taskCompletedElement.appendChild(myIncompleteIcon);
             completed = false;
-            taskDescription.classList.remove('strikethrough');
+            taskDescriptionElement.classList.remove('strikethrough');
         }
         else {
-            taskCompleted.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><title>check-complete</title><path d="M12 2C6.5 2 2 6.5 2 12S6.5 22 12 22 22 17.5 22 12 17.5 2 12 2M10 17L5 12L6.41 10.59L10 14.17L17.59 6.58L19 8L10 17Z" /></svg>';
+            taskCompletedElement.removeChild(taskCompletedElement.firstChild);
+            taskCompletedElement.appendChild(myCompleteIcon);
             completed = true;
-            taskDescription.classList.add('strikethrough');
+            taskDescriptionElement.classList.add('strikethrough');
         }
     }
 
@@ -690,43 +705,43 @@ module.exports = __webpack_require__.p + "check-all.svg";
 
 /***/ }),
 
-/***/ "./src/assets/check-circle.svg":
-/*!*************************************!*\
-  !*** ./src/assets/check-circle.svg ***!
-  \*************************************/
+/***/ "./src/assets/check-circle-outline.svg":
+/*!*********************************************!*\
+  !*** ./src/assets/check-circle-outline.svg ***!
+  \*********************************************/
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
-module.exports = __webpack_require__.p + "check-circle.svg";
+module.exports = __webpack_require__.p + "check-circle-outline.svg";
 
 /***/ }),
 
-/***/ "./src/assets/empty-circle.svg":
-/*!*************************************!*\
-  !*** ./src/assets/empty-circle.svg ***!
-  \*************************************/
+/***/ "./src/assets/circle-outline.svg":
+/*!***************************************!*\
+  !*** ./src/assets/circle-outline.svg ***!
+  \***************************************/
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
-module.exports = __webpack_require__.p + "empty-circle.svg";
+module.exports = __webpack_require__.p + "circle-outline.svg";
 
 /***/ }),
 
-/***/ "./src/assets/pencil.svg":
-/*!*******************************!*\
-  !*** ./src/assets/pencil.svg ***!
-  \*******************************/
+/***/ "./src/assets/pencil-outline.svg":
+/*!***************************************!*\
+  !*** ./src/assets/pencil-outline.svg ***!
+  \***************************************/
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
-module.exports = __webpack_require__.p + "pencil.svg";
+module.exports = __webpack_require__.p + "pencil-outline.svg";
 
 /***/ }),
 
-/***/ "./src/assets/trashcan.svg":
-/*!*********************************!*\
-  !*** ./src/assets/trashcan.svg ***!
-  \*********************************/
+/***/ "./src/assets/trashcan-outline.svg":
+/*!*****************************************!*\
+  !*** ./src/assets/trashcan-outline.svg ***!
+  \*****************************************/
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
-module.exports = __webpack_require__.p + "trashcan.svg";
+module.exports = __webpack_require__.p + "trashcan-outline.svg";
 
 /***/ })
 
@@ -867,4 +882,4 @@ content.appendChild(task3.el);
 
 /******/ })()
 ;
-//# sourceMappingURL=bundle.8214614c9c26963aca77.js.map
+//# sourceMappingURL=bundle.f91a77ca0baca1a3e827.js.map
