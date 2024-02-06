@@ -24,19 +24,28 @@
                 <div class="task-elements-container">
                 </div>
             </div>
-            <div class="new-task-btn-container">
-                <button class="new-task-btn">Create new task</button>
-            </div>
-            <div class="task-form-popup form-close">
-                <form action="" class="form-container">
-                    <label for="form-description">Task description</label>
-                    <input type="text" placeholder="Enter task description..." id="form-description" required>
+            <div>
+                <div class="new-task-btn-container">
+                    <button class="open-task-form-btn">Create Task</button>
+                </div>
+                <dialog class="modal">
+                    <form action="" method="dialog">
+                        <div class="form-elements-container">
+                            <div>
+                                <label for="form-description">Task</label>
+                                <input type="text" placeholder="Enter task description..." id="form-description"
+                                    required>
+                            </div>
+                            <div>
+                                <label for="form-due-date">Due Date</label>
+                                <input type="text" placeholder="Enter task due date..." id="form-due-date" required>
+                            </div>
 
-                    <label for="form-due-date">Task due date</label>
-                    <input type="text" placeholder="Enter task due date..." id="form-due-date" required>
-
-                    <button type="submit">Create Task</button>
-                </form>
+                            <button type="submit" class="task-form-submit-btn">Submit</button>
+                            <button class="task-form-close-btn">Close</button>
+                        </div>
+                    </form>
+                </dialog>
             </div>
         </main>
         <footer>Footer</footer>

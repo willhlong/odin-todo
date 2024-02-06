@@ -6,10 +6,14 @@ import './styles/mystyles.css';
 
 addHeaderStuff();
 
-const newTaskBtn = document.querySelector('.new-task-btn');
-newTaskBtn.addEventListener('click', )
+const newTaskBtn = document.querySelector('.open-task-form-btn');
+const submitTaskFormBtn = document.querySelector('.task-form-submit-btn');
+const closeTaskFormBtn = document.querySelector('.task-form-close-btn');
 
-const content = document.querySelector('.tasks-container');
-content.appendChild(task1.el);
-content.appendChild(task2.el);
-content.appendChild(task3.el);
+const modal = document.querySelector('.modal');
+newTaskBtn.addEventListener('click', () => {
+    modal.showModal();
+});
+closeTaskFormBtn.addEventListener('click', () => {
+    modal.close();
+})
