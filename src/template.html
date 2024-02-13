@@ -29,20 +29,17 @@
                     <button class="open-task-form-btn">Create Task</button>
                 </div>
                 <dialog class="modal">
-                    <form action="" method="dialog">
+                    <div class="form-header">Create new task</div>
+                    <form class="form" action="" method="dialog">
                         <div class="form-elements-container">
-                            <div>
-                                <label for="form-description">Task</label>
-                                <input type="text" placeholder="Enter task description..." id="form-description"
-                                    required>
+                            <label for="form-description">Task</label>
+                            <input type="text" placeholder="Enter task description..." id="form-description" required>
+                            <label for="form-due-date">Due Date</label>
+                            <input type="text" placeholder="Enter task due date..." id="form-due-date" required>
+                            <div class="form-buttons">
+                                <button type="submit" class="task-form-submit-btn">Submit</button>
+                                <button class="task-form-close-btn">Close</button>
                             </div>
-                            <div>
-                                <label for="form-due-date">Due Date</label>
-                                <input type="text" placeholder="Enter task due date..." id="form-due-date" required>
-                            </div>
-
-                            <button type="submit" class="task-form-submit-btn">Submit</button>
-                            <button class="task-form-close-btn">Close</button>
                         </div>
                     </form>
                 </dialog>
