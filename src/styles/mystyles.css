@@ -48,6 +48,30 @@ nav {
     width: 300px;
 }
 
+.projects-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+    margin-top: 25px;
+}
+
+.project {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    background-color: white;
+    width: 75%;
+    border-radius: 5px;
+    padding: 5px 15px;
+    font-size: 1.5em;
+    gap: 15px;
+
+}
+.projects-container svg {
+    width: 1em;
+    height: 1em;
+}
 main {
     grid-area: content;
     background-color: var(--main-color-light);
