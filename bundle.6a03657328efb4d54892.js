@@ -71,13 +71,55 @@ nav {
     width: 300px;
 }
 
+.projects-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+    margin-top: 25px;
+}
+
+.project {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    background-color: white;
+    width: 75%;
+    border-radius: 5px;
+    padding: 5px 15px;
+    font-size: 1.5em;
+    gap: 15px;
+}
+
+.project:hover {
+    opacity: .8;
+}
+.projects-container svg {
+    width: 1em;
+    height: 1em;
+}
 main {
     grid-area: content;
     background-color: var(--main-color-light);
 }
 
+
 main > div > h1 {
     margin: 0;
+}
+
+.open-task-form-btn {
+    background-color: var(--nav-color-light);
+    border: none;
+    border-radius: 5px;
+    font-size: 1.2em;
+    padding: 5px 15px;
+    cursor: pointer;
+    margin: 15px;
+}
+
+.open-task-form-btn:hover {
+    opacity: .8;
 }
 
 .project-title {
@@ -123,11 +165,67 @@ main > div > h1 {
     text-decoration: line-through;
     opacity: 50%;
 }
+
+.new-task-btn-container {
+    display: flex;
+    justify-content: center;
+}
+
+.modal {
+    border: none;
+    border-radius: 5px;
+    max-width: 400px;
+    padding: 0;
+    font-size: 2rem;
+}
+
+.modal::backdrop {
+    background: rgb(0 0 0 / .6);
+}
+
+.form-header {
+    background-color: var(--header-color-light);
+    padding: 15px;
+}
+
+.form {
+    display: flex;
+    padding: 15px;
+    font-size: 1.5rem;
+}
+
+.form-elements-container input {
+    border: none;
+    border-bottom: 2px solid var(--header-color-light);
+    width: 100%;
+    padding: 25px 0;
+    padding-bottom: 0;
+    margin-bottom: 25px;
+    font-size: 1rem;
+    outline: none;
+}
+
+.form-buttons {
+    display: flex;
+    justify-content: end;
+    gap: 10px;
+    margin-top: 25px;
+}
+
+.form-buttons button {
+    font-size: 1rem;
+    background-color: var(--header-color-light);
+    border: none;
+    border-radius: 5px;
+    padding: 10px;
+    cursor: pointer;
+}
+
 footer {
     grid-area: footer;
     background-color: var(--footer-color-light);
 }
-`, "",{"version":3,"sources":["webpack://./src/styles/mystyles.css"],"names":[],"mappings":"AAAA;IACI,oBAAoB;IACpB,oBAAoB;IACpB,6BAA6B;IAC7B,0BAA0B;IAC1B,6BAA6B;IAC7B,2BAA2B;IAC3B,4BAA4B;IAC5B,yBAAyB;IACzB,4BAA4B;IAC5B,0BAA0B;AAC9B;;AAEA;IACI,SAAS;IACT,eAAe;AACnB;;AAEA;IACI,WAAW;IACX,YAAY;AAChB;;AAEA;IACI,aAAa;IACb,+BAA+B;IAC/B,iCAAiC;IACjC;;;mBAGe;IACf,kBAAkB;AACtB;;AAEA;IACI,aAAa;IACb,mBAAmB;IACnB,SAAS;IACT,kBAAkB;IAClB,2CAA2C;IAC3C,iBAAiB;IACjB,4BAA4B;AAChC;;AAEA;IACI,eAAe;IACf,wCAAwC;IACxC,YAAY;AAChB;;AAEA;IACI,kBAAkB;IAClB,yCAAyC;AAC7C;;AAEA;IACI,SAAS;AACb;;AAEA;IACI,eAAe;IACf,kBAAkB;AACtB;;AAEA;IACI,aAAa;IACb,UAAU;IACV,YAAY;AAChB;;AAEA;IACI,aAAa;IACb,uBAAuB;IACvB,kDAAkD;IAClD,iBAAiB;;AAErB;;AAEA;IACI,aAAa;IACb,mBAAmB;IACnB,YAAY;IACZ,WAAW;IACX,UAAU;IACV,mBAAmB;AACvB;;AAEA;IACI,aAAa;IACb,mBAAmB;IACnB,WAAW;IACX,YAAY;AAChB;;AAEA;IACI,YAAY;AAChB;;AAEA;IACI,6BAA6B;IAC7B,YAAY;AAChB;AACA;IACI,iBAAiB;IACjB,2CAA2C;AAC/C","sourcesContent":[":root {\n    --header-height: 7vh;\n    --footer-height: 7vh;\n    --header-color-light: #3f98b7;\n    --nav-color-light: #a2cfdb;\n    --footer-color-light: #3f98b7;\n    --main-color-light: #ecf6f8;\n    --header-color-dark: #A5D8FF;\n    --nav-color-dark: #266DD3;\n    --footer-color-dark: #A5D8FF;\n    --main-color-dark: #f0f7f4;\n}\n\nbody {\n    margin: 0;\n    font-size: 100%;\n}\n\nimg {\n    width: 50px;\n    height: 50px;\n}\n\n.page-container {\n    display: grid;\n    grid-template-columns: auto 1fr;\n    grid-template-rows: auto 1fr auto;\n    grid-template-areas:\n    'header header'\n    'menu content'\n    'footer footer';\n    min-height: 100dvh;\n}\n\nheader {\n    display: flex;\n    align-items: center;\n    gap: 25px;\n    padding-left: 25px;\n    background-color: var(--header-color-light);\n    grid-area: header;\n    height: var(--header-height);\n}\n\nnav {\n    grid-area: menu;\n    background-color: var(--nav-color-light);\n    width: 300px;\n}\n\nmain {\n    grid-area: content;\n    background-color: var(--main-color-light);\n}\n\nmain > div > h1 {\n    margin: 0;\n}\n\n.project-title {\n    font-size: 3rem;\n    text-align: center;\n}\n\n.tasks-container {\n    display: grid;\n    width: 50%;\n    margin: auto;\n}\n\n.task-area-title {\n    display: flex;\n    justify-content: center;\n    border-bottom: 2px solid var(--header-color-light);\n    font-size: 2.5rem;\n\n}\n\n.task-elements-container {\n    display: flex;\n    align-items: center;\n    margin: auto;\n    gap: 0.5rem;\n    width: 75%;\n    padding-top: 0.5rem;\n}\n\n.task-elements-container img {\n    display: flex;\n    align-items: center;\n    width: 25px;\n    height: 25px;\n}\n\n.description {\n    flex-grow: 1;\n}\n\n.strikethrough {\n    text-decoration: line-through;\n    opacity: 50%;\n}\nfooter {\n    grid-area: footer;\n    background-color: var(--footer-color-light);\n}\n"],"sourceRoot":""}]);
+`, "",{"version":3,"sources":["webpack://./src/styles/mystyles.css"],"names":[],"mappings":"AAAA;IACI,oBAAoB;IACpB,oBAAoB;IACpB,6BAA6B;IAC7B,0BAA0B;IAC1B,6BAA6B;IAC7B,2BAA2B;IAC3B,4BAA4B;IAC5B,yBAAyB;IACzB,4BAA4B;IAC5B,0BAA0B;AAC9B;;AAEA;IACI,SAAS;IACT,eAAe;AACnB;;AAEA;IACI,WAAW;IACX,YAAY;AAChB;;AAEA;IACI,aAAa;IACb,+BAA+B;IAC/B,iCAAiC;IACjC;;;mBAGe;IACf,kBAAkB;AACtB;;AAEA;IACI,aAAa;IACb,mBAAmB;IACnB,SAAS;IACT,kBAAkB;IAClB,2CAA2C;IAC3C,iBAAiB;IACjB,4BAA4B;AAChC;;AAEA;IACI,eAAe;IACf,wCAAwC;IACxC,YAAY;AAChB;;AAEA;IACI,aAAa;IACb,eAAe;IACf,SAAS;IACT,uBAAuB;IACvB,gBAAgB;AACpB;;AAEA;IACI,aAAa;IACb,sBAAsB;IACtB,mBAAmB;IACnB,uBAAuB;IACvB,UAAU;IACV,kBAAkB;IAClB,iBAAiB;IACjB,gBAAgB;IAChB,SAAS;AACb;;AAEA;IACI,WAAW;AACf;AACA;IACI,UAAU;IACV,WAAW;AACf;AACA;IACI,kBAAkB;IAClB,yCAAyC;AAC7C;;;AAGA;IACI,SAAS;AACb;;AAEA;IACI,wCAAwC;IACxC,YAAY;IACZ,kBAAkB;IAClB,gBAAgB;IAChB,iBAAiB;IACjB,eAAe;IACf,YAAY;AAChB;;AAEA;IACI,WAAW;AACf;;AAEA;IACI,eAAe;IACf,kBAAkB;AACtB;;AAEA;IACI,aAAa;IACb,UAAU;IACV,YAAY;AAChB;;AAEA;IACI,aAAa;IACb,uBAAuB;IACvB,kDAAkD;IAClD,iBAAiB;;AAErB;;AAEA;IACI,aAAa;IACb,mBAAmB;IACnB,YAAY;IACZ,WAAW;IACX,UAAU;IACV,mBAAmB;AACvB;;AAEA;IACI,aAAa;IACb,mBAAmB;IACnB,WAAW;IACX,YAAY;AAChB;;AAEA;IACI,YAAY;AAChB;;AAEA;IACI,6BAA6B;IAC7B,YAAY;AAChB;;AAEA;IACI,aAAa;IACb,uBAAuB;AAC3B;;AAEA;IACI,YAAY;IACZ,kBAAkB;IAClB,gBAAgB;IAChB,UAAU;IACV,eAAe;AACnB;;AAEA;IACI,2BAA2B;AAC/B;;AAEA;IACI,2CAA2C;IAC3C,aAAa;AACjB;;AAEA;IACI,aAAa;IACb,aAAa;IACb,iBAAiB;AACrB;;AAEA;IACI,YAAY;IACZ,kDAAkD;IAClD,WAAW;IACX,eAAe;IACf,iBAAiB;IACjB,mBAAmB;IACnB,eAAe;IACf,aAAa;AACjB;;AAEA;IACI,aAAa;IACb,oBAAoB;IACpB,SAAS;IACT,gBAAgB;AACpB;;AAEA;IACI,eAAe;IACf,2CAA2C;IAC3C,YAAY;IACZ,kBAAkB;IAClB,aAAa;IACb,eAAe;AACnB;;AAEA;IACI,iBAAiB;IACjB,2CAA2C;AAC/C","sourcesContent":[":root {\n    --header-height: 7vh;\n    --footer-height: 7vh;\n    --header-color-light: #3f98b7;\n    --nav-color-light: #a2cfdb;\n    --footer-color-light: #3f98b7;\n    --main-color-light: #ecf6f8;\n    --header-color-dark: #A5D8FF;\n    --nav-color-dark: #266DD3;\n    --footer-color-dark: #A5D8FF;\n    --main-color-dark: #f0f7f4;\n}\n\nbody {\n    margin: 0;\n    font-size: 100%;\n}\n\nimg {\n    width: 50px;\n    height: 50px;\n}\n\n.page-container {\n    display: grid;\n    grid-template-columns: auto 1fr;\n    grid-template-rows: auto 1fr auto;\n    grid-template-areas:\n    'header header'\n    'menu content'\n    'footer footer';\n    min-height: 100dvh;\n}\n\nheader {\n    display: flex;\n    align-items: center;\n    gap: 25px;\n    padding-left: 25px;\n    background-color: var(--header-color-light);\n    grid-area: header;\n    height: var(--header-height);\n}\n\nnav {\n    grid-area: menu;\n    background-color: var(--nav-color-light);\n    width: 300px;\n}\n\n.projects-container {\n    display: flex;\n    flex-wrap: wrap;\n    gap: 10px;\n    justify-content: center;\n    margin-top: 25px;\n}\n\n.project {\n    display: flex;\n    justify-content: start;\n    align-items: center;\n    background-color: white;\n    width: 75%;\n    border-radius: 5px;\n    padding: 5px 15px;\n    font-size: 1.5em;\n    gap: 15px;\n}\n\n.project:hover {\n    opacity: .8;\n}\n.projects-container svg {\n    width: 1em;\n    height: 1em;\n}\nmain {\n    grid-area: content;\n    background-color: var(--main-color-light);\n}\n\n\nmain > div > h1 {\n    margin: 0;\n}\n\n.open-task-form-btn {\n    background-color: var(--nav-color-light);\n    border: none;\n    border-radius: 5px;\n    font-size: 1.2em;\n    padding: 5px 15px;\n    cursor: pointer;\n    margin: 15px;\n}\n\n.open-task-form-btn:hover {\n    opacity: .8;\n}\n\n.project-title {\n    font-size: 3rem;\n    text-align: center;\n}\n\n.tasks-container {\n    display: grid;\n    width: 50%;\n    margin: auto;\n}\n\n.task-area-title {\n    display: flex;\n    justify-content: center;\n    border-bottom: 2px solid var(--header-color-light);\n    font-size: 2.5rem;\n\n}\n\n.task-elements-container {\n    display: flex;\n    align-items: center;\n    margin: auto;\n    gap: 0.5rem;\n    width: 75%;\n    padding-top: 0.5rem;\n}\n\n.task-elements-container img {\n    display: flex;\n    align-items: center;\n    width: 25px;\n    height: 25px;\n}\n\n.description {\n    flex-grow: 1;\n}\n\n.strikethrough {\n    text-decoration: line-through;\n    opacity: 50%;\n}\n\n.new-task-btn-container {\n    display: flex;\n    justify-content: center;\n}\n\n.modal {\n    border: none;\n    border-radius: 5px;\n    max-width: 400px;\n    padding: 0;\n    font-size: 2rem;\n}\n\n.modal::backdrop {\n    background: rgb(0 0 0 / .6);\n}\n\n.form-header {\n    background-color: var(--header-color-light);\n    padding: 15px;\n}\n\n.form {\n    display: flex;\n    padding: 15px;\n    font-size: 1.5rem;\n}\n\n.form-elements-container input {\n    border: none;\n    border-bottom: 2px solid var(--header-color-light);\n    width: 100%;\n    padding: 25px 0;\n    padding-bottom: 0;\n    margin-bottom: 25px;\n    font-size: 1rem;\n    outline: none;\n}\n\n.form-buttons {\n    display: flex;\n    justify-content: end;\n    gap: 10px;\n    margin-top: 25px;\n}\n\n.form-buttons button {\n    font-size: 1rem;\n    background-color: var(--header-color-light);\n    border: none;\n    border-radius: 5px;\n    padding: 10px;\n    cursor: pointer;\n}\n\nfooter {\n    grid-area: footer;\n    background-color: var(--footer-color-light);\n}\n"],"sourceRoot":""}]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -574,6 +672,69 @@ module.exports = styleTagTransform;
 
 /***/ }),
 
+/***/ "./src/modules/domController.js":
+/*!**************************************!*\
+  !*** ./src/modules/domController.js ***!
+  \**************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ addTask)
+/* harmony export */ });
+function addTask(task) { 
+    const el = document.querySelector('.tasks-container');
+    el.appendChild(task);
+}
+
+/***/ }),
+
+/***/ "./src/modules/formController.js":
+/*!***************************************!*\
+  !*** ./src/modules/formController.js ***!
+  \***************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ addFormListeners)
+/* harmony export */ });
+/* harmony import */ var _task__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./task */ "./src/modules/task.js");
+/* harmony import */ var _domController__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./domController */ "./src/modules/domController.js");
+
+
+
+function addFormListeners() {
+    const newTaskBtn = document.querySelector('.open-task-form-btn');
+    const submitTaskFormBtn = document.querySelector('.task-form-submit-btn');
+    const closeTaskFormBtn = document.querySelector('.task-form-close-btn');
+    const modal = document.querySelector('.modal');
+    const title = document.getElementById('form-title');
+    const description = document.getElementById('form-description');
+    const dueDate = document.getElementById('form-due-date');
+
+    submitTaskFormBtn.addEventListener('click', () => {
+        let task = (0,_task__WEBPACK_IMPORTED_MODULE_0__["default"])(false, description.value, dueDate.value);
+        (0,_domController__WEBPACK_IMPORTED_MODULE_1__["default"])(task.el);
+    });
+
+    newTaskBtn.addEventListener('click', () => {
+        // clear form fields
+        title.value = "";
+        description.value = "";
+        dueDate.value = "";
+        modal.showModal();
+    });
+
+    closeTaskFormBtn.addEventListener('click', () => {
+        modal.close();
+    });
+
+}
+
+
+/***/ }),
+
 /***/ "./src/modules/task.js":
 /*!*****************************!*\
   !*** ./src/modules/task.js ***!
@@ -595,6 +756,7 @@ __webpack_require__.r(__webpack_exports__);
 
 function createTask(completed, description, dueDate) {
 
+    /* Create HTML elements needed for new task to be added to the DOM */
     const el = document.createElement('div');
     el.classList.add('task-elements-container');
 
@@ -630,6 +792,7 @@ function createTask(completed, description, dueDate) {
     deleteLogoElement.appendChild(myRemoveIcon);
     deleteLogoElement.classList.add('remove');
 
+    /* Load completed status and update checkmark icon in DOM */
     if (completed) {
         taskCompletedElement.appendChild(myCompleteIcon);
         taskDescriptionElement.classList.add('strikethrough');
@@ -638,13 +801,14 @@ function createTask(completed, description, dueDate) {
         taskCompletedElement.appendChild(myIncompleteIcon);
     }
 
+    /* Combine elements created above to create HTML to be added to DOM */
     el.appendChild(taskCompletedElement);
     el.appendChild(taskDescriptionElement);
     el.appendChild(taskDueDateElement);
     el.appendChild(editLogoElement);
     el.appendChild(deleteLogoElement);
 
-    
+    /* Toggle whether a task has been completed and update checkbox accordingly */
     function toggleCompletion() {
         if (completed) {
             taskCompletedElement.removeChild(taskCompletedElement.firstChild);
@@ -861,7 +1025,7 @@ var __webpack_exports__ = {};
   \**********************/
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _page_components_header__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./page-components/header */ "./src/page-components/header.js");
-/* harmony import */ var _modules_task__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./modules/task */ "./src/modules/task.js");
+/* harmony import */ var _modules_formController__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./modules/formController */ "./src/modules/formController.js");
 /* harmony import */ var _styles_mystyles_css__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./styles/mystyles.css */ "./src/styles/mystyles.css");
 
 
@@ -869,17 +1033,10 @@ __webpack_require__.r(__webpack_exports__);
 
 
 (0,_page_components_header__WEBPACK_IMPORTED_MODULE_0__["default"])();
+(0,_modules_formController__WEBPACK_IMPORTED_MODULE_1__["default"])();
 
-const task1 = (0,_modules_task__WEBPACK_IMPORTED_MODULE_1__["default"])(true, 'go to the gym', '02/05/2024');
-const task2 = (0,_modules_task__WEBPACK_IMPORTED_MODULE_1__["default"])(false, 'go to school', '03/09/2024');
-const task3 = (0,_modules_task__WEBPACK_IMPORTED_MODULE_1__["default"])(false, 'go to bed', '02/04/2024');
-
-const content = document.querySelector('.tasks-container');
-content.appendChild(task1.el);
-content.appendChild(task2.el);
-content.appendChild(task3.el);
 })();
 
 /******/ })()
 ;
-//# sourceMappingURL=bundle.f91a77ca0baca1a3e827.js.map
+//# sourceMappingURL=bundle.6a03657328efb4d54892.js.map
