@@ -39,9 +39,11 @@ header {
     padding-left: 25px;
     background-color: var(--header-color-light);
     grid-area: header;
-    height: var(--header-height);
 }
 
+header h1 {
+    margin: 10px;
+}
 nav {
     grid-area: menu;
     background-color: var(--nav-color-light);
@@ -201,4 +203,32 @@ main > div > h1 {
 footer {
     grid-area: footer;
     background-color: var(--footer-color-light);
+}
+
+@media screen and (max-width: 600px) {
+    /* body {
+        margin: 0;
+    } */
+    .page-container {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto 1fr auto;
+        grid-template-areas:
+        'header'
+        'menu'
+        'content'
+        'footer';
+        min-height: 100dvh;
+    }
+
+    nav {
+        width: 100%;
+    }
+    
+    .projects-container {
+        margin: 10px 0;
+    }
+    .project {
+        width: auto;
+    }
 }
