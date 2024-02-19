@@ -1,4 +1,4 @@
-import createTask from "./task";
+import createTask from "./createTask";
 
 export default function () {
     const newTaskBtn = document.querySelector('.open-task-form-btn');
