@@ -20,6 +20,3 @@ let myDomController = domController();
 myDomController.showProject(currentProject);
 
 addHeaderStuff();
-
-
-//fixme: figure out what is happening with printCurrentProjectTask
