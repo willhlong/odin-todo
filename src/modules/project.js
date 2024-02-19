@@ -1,4 +1,6 @@
-import createTask from "./task";
+import projectManager from "./projectManager.js";
+import taskPrinter from "./domController.js"
+
 
 export default function createProject(name) {
     let tasks = [];
@@ -7,5 +9,18 @@ export default function createProject(name) {
         tasks.push(task);
     }
 
-    return { addTask }
+    function deleteTask(task) {
+        let index = tasks.indexOf(task);
+        tasks.splice(index, 1);
+    }
+
+    function printTaskList(domController) {
+        tasks.forEach((task) => {
+            domController.taskPrinter(task);
+        })
+    }
+
+    function getName() { return name; }
+
+    return { addTask, printTaskList, getName }
 }

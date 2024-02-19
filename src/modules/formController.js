@@ -1,7 +1,6 @@
 import createTask from "./task";
-import addTask from "./domController";
 
-export default function addFormListeners() {
+export default function () {
     const newTaskBtn = document.querySelector('.open-task-form-btn');
     const submitTaskFormBtn = document.querySelector('.task-form-submit-btn');
     const closeTaskFormBtn = document.querySelector('.task-form-close-btn');
@@ -10,21 +9,25 @@ export default function addFormListeners() {
     const description = document.getElementById('form-description');
     const dueDate = document.getElementById('form-due-date');
 
-    submitTaskFormBtn.addEventListener('click', () => {
-        let task = createTask(false, description.value, dueDate.value);
-        addTask(task.el);
-    });
 
-    newTaskBtn.addEventListener('click', () => {
-        // clear form fields
-        title.value = "";
-        description.value = "";
-        dueDate.value = "";
-        modal.showModal();
-    });
+    function addListeners(currentProject) {
+        submitTaskFormBtn.addEventListener('click', () => {
+            let task = createTask(false, title.value, description.value, dueDate.value);
+            currentProject.addTask(task);
+        })
 
-    closeTaskFormBtn.addEventListener('click', () => {
-        modal.close();
-    });
+        newTaskBtn.addEventListener('click', () => {
+            // clear form fields
+            // title.value = "";
+            // description.value = "";
+            // dueDate.value = "";
+            modal.showModal();
+        });
 
+        closeTaskFormBtn.addEventListener('click', () => {
+            modal.close();
+        });
+    }
+
+    return { addListeners }
 }
