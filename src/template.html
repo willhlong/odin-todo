@@ -42,16 +42,16 @@
                 </div>
                 <dialog class="modal">
                     <div class="form-header">Create new task</div>
-                    <form class="form" action="" method="dialog">
+                    <form id="task-form" action="submit" method="dialog">
                         <div class="form-elements-container">
                             <label for="form-title">Task Title</label>
-                            <input type="text" placeholder="Title..." id="form-title" required>
+                            <input type="text" name="title" placeholder="Title..." id="form-title" required>
                             <label for="form-description">Task</label>
-                            <input type="text" placeholder="Enter task description..." id="form-description">
+                            <input type="text" name="description" placeholder="Enter task description..." id="form-description">
                             <label for="form-due-date">Due Date</label>
-                            <input type="date" placeholder="Enter task due date..." id="form-due-date" required>
+                            <input type="date" name="duedate" placeholder="Enter task due date..." id="form-due-date" required>
                             <div class="form-buttons">
-                                <button class="task-form-submit-btn">Submit</button>
+                                <button type="submit" class="task-form-submit-btn">Submit</button>
                                 <button class="task-form-close-btn">Close</button>
                             </div>
                         </div>

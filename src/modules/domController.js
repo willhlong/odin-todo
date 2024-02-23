@@ -21,6 +21,7 @@ export default function () {
 
         let tasks = project.getTasks();
         const taskContainer = document.querySelector('.tasks-container');
+        taskContainer.innerHTML = '';
         tasks.forEach(task => {
             //Create div element to wrap new task
             const el = document.createElement('div');

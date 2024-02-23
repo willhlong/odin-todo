@@ -172,7 +172,7 @@ main > div > h1 {
     padding: 15px;
 }
 
-.form {
+#task-form {
     display: flex;
     padding: 15px;
     font-size: 1.5rem;
