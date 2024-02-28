@@ -10,24 +10,23 @@ let defaultProject = createProject('All Tasks');
 let currentProject = defaultProject;
 projects.push(currentProject);
 
-// let task1 = createTask('false', 'task1', 'desc', 'now');
-// let task2 = createTask('false', 'task2', 'desc', 'now');
-// let task3 = createTask('false', 'task3', 'desc', 'now');
-// currentProject.addTask(task1);
-// currentProject.addTask(task2);
-// currentProject.addTask(task3);
 // Add project tasks to DOM with domController object
 let myDomController = domController();
 myDomController.showProject(currentProject);
 
 // Handle data capture when new task is created
 const newTaskBtn = document.querySelector('.open-task-form-btn');
+const submitTaskFormBtn = document.querySelector('.task-form-submit-btn');
 const closeTaskFormBtn = document.querySelector('.task-form-close-btn');
 const modal = document.querySelector('.modal');
 const form = document.getElementById('task-form');
-form.addEventListener('submit', (e) => {
 
+submitTaskFormBtn.addEventListener('click', () => {
     const formData = new FormData(form);
+    document.getElementById('form-title').value = '';
+    document.getElementById('form-description').value = '';
+    document.getElementById('form-due-date').value = '';
+    modal.close();
 });
 form.addEventListener('formdata', (e) => {
     let formData = e.formData;
@@ -36,10 +35,6 @@ form.addEventListener('formdata', (e) => {
     myDomController.showProject(currentProject);
 })
 newTaskBtn.addEventListener('click', () => {
-    // clear form fields
-    // title.value = "";
-    // description.value = "";
-    // dueDate.value = "";
     modal.showModal();
 });
 closeTaskFormBtn.addEventListener('click', () => {
