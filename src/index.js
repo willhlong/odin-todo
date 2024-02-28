@@ -10,12 +10,12 @@ let defaultProject = createProject('All Tasks');
 let currentProject = defaultProject;
 projects.push(currentProject);
 
-let task1 = createTask('false', 'task1', 'desc', 'now');
-let task2 = createTask('false', 'task2', 'desc', 'now');
-let task3 = createTask('false', 'task3', 'desc', 'now');
-currentProject.addTask(task1);
-currentProject.addTask(task2);
-currentProject.addTask(task3);
+// let task1 = createTask('false', 'task1', 'desc', 'now');
+// let task2 = createTask('false', 'task2', 'desc', 'now');
+// let task3 = createTask('false', 'task3', 'desc', 'now');
+// currentProject.addTask(task1);
+// currentProject.addTask(task2);
+// currentProject.addTask(task3);
 // Add project tasks to DOM with domController object
 let myDomController = domController();
 myDomController.showProject(currentProject);

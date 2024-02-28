@@ -11,8 +11,15 @@ export default function () {
 
         let tasks = project.getTasks();
         const taskContainer = document.querySelector('.tasks-container');
-        taskContainer.innerHTML = '';
-        tasks.forEach(task => {  
+        taskContainer.innerHTML =
+            `<div class="task-elements-container first-row">
+            <div class="completed hide"><img src="http://localhost:3000/circle-outline.svg"></div>
+            <div class="title col-header">Task Title</div>
+            <div class="due-date col-header">Due Date</div>
+            <div class="edit hide"><img src="http://localhost:3000/pencil-outline.svg"></div>
+            <div class="remove hide"><img src="http://localhost:3000/trashcan-outline.svg"></div>
+            </div>`;
+        tasks.forEach(task => {
             // Create svg icons to be added to dom  
             const myEditIcon = new Image();
             myEditIcon.src = editIcon;
@@ -22,7 +29,7 @@ export default function () {
             myIncompleteIcon.src = incompleteIcon;
             const myCompleteIcon = new Image();
             myCompleteIcon.src = completeIcon;
-            
+
             //Create div element to wrap new task
             const el = document.createElement('div');
             el.classList.add('task-elements-container');

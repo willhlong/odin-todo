@@ -111,6 +111,13 @@ main > div > h1 {
     text-align: center;
 }
 
+.current-project {
+    border-bottom: solid 2px var(--header-color-light);
+    width: 75%;
+    margin: auto;
+    padding-top: 5%;
+}
+
 .tasks-container {
     display: grid;
     width: 75%;
@@ -122,16 +129,36 @@ main > div > h1 {
     justify-content: center;
     border-bottom: 2px solid var(--header-color-light);
     font-size: 2.5rem;
-
 }
 
 .task-elements-container {
     display: flex;
+    justify-content: start;
     align-items: center;
     margin: auto;
     gap: 0.5rem;
     width: 75%;
     padding-top: 0.5rem;
+}
+
+.hide {
+    opacity: 0;
+}
+
+.col-header {
+    font-size: 1.3rem;
+    font-weight: bold;
+}
+
+.first-row {
+    padding: 15px;
+}
+.title {
+    width: 40%;
+}
+
+.due-date {
+    width: 25%;
 }
 
 .task-elements-container img {
