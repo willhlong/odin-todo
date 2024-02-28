@@ -4,16 +4,6 @@ import incompleteIcon from '../assets/circle-outline.svg';
 import completeIcon from '../assets/check-circle-outline.svg';
 
 export default function () {
-    // Create svg icons to be added to dom
-    const myEditIcon = new Image();
-    myEditIcon.src = editIcon;
-    const myRemoveIcon = new Image();
-    myRemoveIcon.src = removeIcon;
-    const myIncompleteIcon = new Image();
-    myIncompleteIcon.src = incompleteIcon;
-    const myCompleteIcon = new Image();
-    myCompleteIcon.src = completeIcon;
-
     function showProject(project) {
         // Change project title element in dom to current project title
         const nameElement = document.querySelector('.current-project');
@@ -22,7 +12,17 @@ export default function () {
         let tasks = project.getTasks();
         const taskContainer = document.querySelector('.tasks-container');
         taskContainer.innerHTML = '';
-        tasks.forEach(task => {
+        tasks.forEach(task => {  
+            // Create svg icons to be added to dom  
+            const myEditIcon = new Image();
+            myEditIcon.src = editIcon;
+            const myRemoveIcon = new Image();
+            myRemoveIcon.src = removeIcon;
+            const myIncompleteIcon = new Image();
+            myIncompleteIcon.src = incompleteIcon;
+            const myCompleteIcon = new Image();
+            myCompleteIcon.src = completeIcon;
+            
             //Create div element to wrap new task
             const el = document.createElement('div');
             el.classList.add('task-elements-container');
