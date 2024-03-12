@@ -802,12 +802,13 @@ function createTask(completed, title, description, dueDate) {
     // }
 
     function isCompleted() { return completed; }
+    function setCompleted(completedStatus) {completed = completedStatus ;}
     function getTitle() { return title; }
     function getDescription() { return description ;}
     function getDueDate() { return dueDate; }
 
     return {
-        isCompleted, getTitle, getDescription, getDueDate
+        isCompleted, setCompleted, getTitle, getDescription, getDueDate
     };
 }
 
@@ -823,7 +824,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (/* export default binding */ __WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var _assets_pencil_outline_svg__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../assets/pencil-outline.svg */ "./src/assets/pencil-outline.svg");
+/* harmony import */ var _assets_information_circle_outline_svg__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../assets/information-circle-outline.svg */ "./src/assets/information-circle-outline.svg");
 /* harmony import */ var _assets_trashcan_outline_svg__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../assets/trashcan-outline.svg */ "./src/assets/trashcan-outline.svg");
 /* harmony import */ var _assets_circle_outline_svg__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../assets/circle-outline.svg */ "./src/assets/circle-outline.svg");
 /* harmony import */ var _assets_check_circle_outline_svg__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../assets/check-circle-outline.svg */ "./src/assets/check-circle-outline.svg");
@@ -848,10 +849,11 @@ __webpack_require__.r(__webpack_exports__);
             <div class="edit hide"><img src="http://localhost:3000/pencil-outline.svg"></div>
             <div class="remove hide"><img src="http://localhost:3000/trashcan-outline.svg"></div>
             </div>`;
+        let index = 0;
         tasks.forEach(task => {
             // Create svg icons to be added to dom  
             const myEditIcon = new Image();
-            myEditIcon.src = _assets_pencil_outline_svg__WEBPACK_IMPORTED_MODULE_0__;
+            myEditIcon.src = _assets_information_circle_outline_svg__WEBPACK_IMPORTED_MODULE_0__;
             const myRemoveIcon = new Image();
             myRemoveIcon.src = _assets_trashcan_outline_svg__WEBPACK_IMPORTED_MODULE_1__;
             const myIncompleteIcon = new Image();
@@ -862,17 +864,30 @@ __webpack_require__.r(__webpack_exports__);
             //Create div element to wrap new task
             const el = document.createElement('div');
             el.classList.add('task-elements-container');
+            el.id = index;
+            index++;
 
             // Create element for checkbox indicating completion status
             const taskCompletedElement = document.createElement('div');
-            taskCompletedElement.appendChild(myIncompleteIcon);
-            //taskCompletedElement.addEventListener('click', toggleCompletion);
+            // taskCompletedElement.appendChild(myIncompleteIcon);
+            if (task.isCompleted()) {
+                taskCompletedElement.appendChild(myCompleteIcon);
+            }
+            if (!task.isCompleted()) {
+                taskCompletedElement.appendChild(myIncompleteIcon);
+            }
             taskCompletedElement.classList.add('completed');
 
             // Create title element
             const taskTitleElement = document.createElement('div');
             taskTitleElement.innerText = task.getTitle();
             taskTitleElement.classList.add('title');
+            if (task.isCompleted()) {
+                taskTitleElement.classList.add('strikethrough');
+            }
+            if (!task.isCompleted()) {
+                taskTitleElement.classList.remove('strikethrough');
+            }
 
             // Create due date element
             const taskDueDateElement = document.createElement('div');
@@ -997,13 +1012,13 @@ module.exports = __webpack_require__.p + "circle-outline.svg";
 
 /***/ }),
 
-/***/ "./src/assets/pencil-outline.svg":
-/*!***************************************!*\
-  !*** ./src/assets/pencil-outline.svg ***!
-  \***************************************/
+/***/ "./src/assets/information-circle-outline.svg":
+/*!***************************************************!*\
+  !*** ./src/assets/information-circle-outline.svg ***!
+  \***************************************************/
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
-module.exports = __webpack_require__.p + "pencil-outline.svg";
+module.exports = __webpack_require__.p + "information-circle-outline.svg";
 
 /***/ }),
 
@@ -1149,36 +1164,47 @@ let defaultProject = (0,_modules_createProject__WEBPACK_IMPORTED_MODULE_2__["def
 let currentProject = defaultProject;
 projects.push(currentProject);
 
-// let task1 = createTask('false', 'task1', 'desc', 'now');
-// let task2 = createTask('false', 'task2', 'desc', 'now');
-// let task3 = createTask('false', 'task3', 'desc', 'now');
-// currentProject.addTask(task1);
-// currentProject.addTask(task2);
-// currentProject.addTask(task3);
 // Add project tasks to DOM with domController object
 let myDomController = (0,_modules_domController__WEBPACK_IMPORTED_MODULE_1__["default"])();
 myDomController.showProject(currentProject);
 
 // Handle data capture when new task is created
 const newTaskBtn = document.querySelector('.open-task-form-btn');
+const submitTaskFormBtn = document.querySelector('.task-form-submit-btn');
 const closeTaskFormBtn = document.querySelector('.task-form-close-btn');
 const modal = document.querySelector('.modal');
 const form = document.getElementById('task-form');
-form.addEventListener('submit', (e) => {
-
+submitTaskFormBtn.addEventListener('click', () => {
     const formData = new FormData(form);
+    document.getElementById('form-title').value = '';
+    document.getElementById('form-description').value = '';
+    document.getElementById('form-due-date').value = '';
+    modal.close();
 });
 form.addEventListener('formdata', (e) => {
     let formData = e.formData;
-    let task = (0,_modules_createTask__WEBPACK_IMPORTED_MODULE_3__["default"])('false', formData.get('title'), formData.get('description'), formData.get('duedate'));
+    let task = (0,_modules_createTask__WEBPACK_IMPORTED_MODULE_3__["default"])(false, formData.get('title'), formData.get('description'), formData.get('duedate'));
     currentProject.addTask(task);
     myDomController.showProject(currentProject);
+    // const checkboxes = document.querySelectorAll('.completed');
+    // checkboxes.forEach(checkbox => {
+    //     checkbox.addEventListener('click', (e) => {
+    //         e.preventDefault();
+    //         let taskIndex = e.currentTarget.parentElement.id;
+    //         let tasks = currentProject.getTasks();
+    //         console.log(tasks[taskIndex].isCompleted());
+    //         if (tasks[taskIndex].isCompleted()) {
+    //             tasks[taskIndex].setCompleted(false);
+    //         }
+    //         if (!tasks[taskIndex].isCompleted()) {
+    //             tasks[taskIndex].setCompleted(true);
+    //         }
+    //         console.log(tasks[taskIndex].isCompleted());
+    //         myDomController.showProject(currentProject);
+    //     });
+    // });
 })
 newTaskBtn.addEventListener('click', () => {
-    // clear form fields
-    // title.value = "";
-    // description.value = "";
-    // dueDate.value = "";
     modal.showModal();
 });
 closeTaskFormBtn.addEventListener('click', () => {
@@ -1187,9 +1213,9 @@ closeTaskFormBtn.addEventListener('click', () => {
 
 (0,_page_components_header__WEBPACK_IMPORTED_MODULE_0__["default"])();
 
-// TODO: refactor form and data capture for creating tasks
+// TODO: solve toggling task completion
 })();
 
 /******/ })()
 ;
-//# sourceMappingURL=bundle.19c909c25a91043a553c.js.map
+//# sourceMappingURL=bundle.7b91097b31842e89fc2c.js.map
