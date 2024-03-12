@@ -32,23 +32,23 @@ form.addEventListener('formdata', (e) => {
     let task = createTask(false, formData.get('title'), formData.get('description'), formData.get('duedate'));
     currentProject.addTask(task);
     myDomController.showProject(currentProject);
-    const checkboxes = document.querySelectorAll('.completed');
-    checkboxes.forEach(checkbox => {
-        checkbox.addEventListener('click', (e) => {
-            e.preventDefault();
-            let taskIndex = e.currentTarget.parentElement.id;
-            let tasks = currentProject.getTasks();
-            console.log(tasks[taskIndex].isCompleted());
-            if (tasks[taskIndex].isCompleted()) {
-                tasks[taskIndex].setCompleted(false);
-            }
-            if (!tasks[taskIndex].isCompleted()) {
-                tasks[taskIndex].setCompleted(true);
-            }
-            console.log(tasks[taskIndex].isCompleted());
-            myDomController.showProject(currentProject);
-        });
-    });
+    // const checkboxes = document.querySelectorAll('.completed');
+    // checkboxes.forEach(checkbox => {
+    //     checkbox.addEventListener('click', (e) => {
+    //         e.preventDefault();
+    //         let taskIndex = e.currentTarget.parentElement.id;
+    //         let tasks = currentProject.getTasks();
+    //         console.log(tasks[taskIndex].isCompleted());
+    //         if (tasks[taskIndex].isCompleted()) {
+    //             tasks[taskIndex].setCompleted(false);
+    //         }
+    //         if (!tasks[taskIndex].isCompleted()) {
+    //             tasks[taskIndex].setCompleted(true);
+    //         }
+    //         console.log(tasks[taskIndex].isCompleted());
+    //         myDomController.showProject(currentProject);
+    //     });
+    // });
 })
 newTaskBtn.addEventListener('click', () => {
     modal.showModal();
