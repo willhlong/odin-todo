@@ -26,11 +26,12 @@ export default function createTask(completed, title, description, dueDate) {
     // }
 
     function isCompleted() { return completed; }
+    function setCompleted(completedStatus) {completed = completedStatus ;}
     function getTitle() { return title; }
     function getDescription() { return description ;}
     function getDueDate() { return dueDate; }
 
     return {
-        isCompleted, getTitle, getDescription, getDueDate
+        isCompleted, setCompleted, getTitle, getDescription, getDueDate
     };
 }

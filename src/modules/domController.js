@@ -19,6 +19,7 @@ export default function () {
             <div class="edit hide"><img src="http://localhost:3000/pencil-outline.svg"></div>
             <div class="remove hide"><img src="http://localhost:3000/trashcan-outline.svg"></div>
             </div>`;
+        let index = 0;
         tasks.forEach(task => {
             // Create svg icons to be added to dom  
             const myEditIcon = new Image();
@@ -33,17 +34,30 @@ export default function () {
             //Create div element to wrap new task
             const el = document.createElement('div');
             el.classList.add('task-elements-container');
+            el.id = index;
+            index++;
 
             // Create element for checkbox indicating completion status
             const taskCompletedElement = document.createElement('div');
-            taskCompletedElement.appendChild(myIncompleteIcon);
-            //taskCompletedElement.addEventListener('click', toggleCompletion);
+            // taskCompletedElement.appendChild(myIncompleteIcon);
+            if (task.isCompleted()) {
+                taskCompletedElement.appendChild(myCompleteIcon);
+            }
+            if (!task.isCompleted()) {
+                taskCompletedElement.appendChild(myIncompleteIcon);
+            }
             taskCompletedElement.classList.add('completed');
 
             // Create title element
             const taskTitleElement = document.createElement('div');
             taskTitleElement.innerText = task.getTitle();
             taskTitleElement.classList.add('title');
+            if (task.isCompleted()) {
+                taskTitleElement.classList.add('strikethrough');
+            }
+            if (!task.isCompleted()) {
+                taskTitleElement.classList.remove('strikethrough');
+            }
 
             // Create due date element
             const taskDueDateElement = document.createElement('div');
